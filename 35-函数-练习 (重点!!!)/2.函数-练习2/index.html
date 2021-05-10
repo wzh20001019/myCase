@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.比较最大值
+        var x = prompt('请输入第一个数字');
+        var y = prompt('请输入第二个数字');
+
+        function compare(num1, num2) {
+            var num1 = parseFloat(num1);
+            var num2 = parseFloat(num2);
+
+            // (1).方法一 if else语句
+            // if (num1 > num2) {
+            //     return num1;
+            // } else {
+            //     return num2;
+            // }
+
+            // (2).方法二 三元表达式
+            return num1 > num2 ? num1 : num2;
+        }
+        var re = compare(x, y);
+        alert('最大值为:' + re);
+    </script>
+</body>
+
+</html>

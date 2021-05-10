@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/animate.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .a {
+            position: absolute;
+            top: 100px;
+            left: 400px;
+            width: 30px;
+            overflow: hidden;
+        }
+        
+        .a li {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            width: 30px;
+            height: 30px;
+            background-color: aqua;
+            cursor: pointer;
+        }
+        
+        .a li:hover {
+            border: 1px solid #777;
+            border-left: none;
+        }
+        
+        .b {
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            width: 200px;
+            height: 90px;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .b li {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 200px;
+            width: 200px;
+            height: 30px;
+            background-color: pink;
+            cursor: pointer;
+        }
+        
+        .b li:nth-child(1) {
+            top: 0;
+        }
+        
+        .b li:nth-child(2) {
+            top: 30px;
+        }
+        
+        .b li:nth-child(3) {
+            top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="a">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ul class="b">
+        <li>内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+    </ul>
+</body>
+
+<script src="js/my.js"></script>
+
+</html>

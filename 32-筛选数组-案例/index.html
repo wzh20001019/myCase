@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.案例1
+        // var arr = [2, 0, 5, 7, 0, 13, 0, 63, 9, 0];
+        // var arr1 = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] !== 0) {
+        //         arr1[arr1.length] = arr[i];
+        //     }
+        // }
+        // console.log(arr1);
+
+        // 2.案例2  翻转数组
+        // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // var newArr = [];
+        // for (var i = arr.length - 1; i >= 0; i--) {
+        //     newArr[newArr.length] = arr[i];
+        // }
+        // console.log(newArr);
+
+        // 3.数据交换
+        // var num1 = 10;
+        // var num2 = 20;
+        // var box;
+        // box = num1;
+        // num1 = num2;
+        // num2 = box;
+        // console.log(num1, num2);
+
+        // 4.冒泡排序(重点)
+        // 1.从小到大
+        var arr = [2, 4, 3, 1, 5, 6];
+        for (var i = 0; i <= arr.length - 1; i++) { //外层循环管趟数
+            for (var j = 0; j <= arr.length - i - 1; j++) { //里层循环管次数
+                if (arr[j] > arr[j + 1]) {
+                    var box = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = box;
+                }
+            }
+        }
+        console.log(arr);
+        // 2.从大到小
+        var arr1 = [2, 4, 3, 1, 5, 6];
+        for (var i = 0; i <= arr1.length - 1; i++) { //外层循环管趟数
+            for (var j = 0; j <= arr1.length - i - 1; j++) { //里层循环管次数
+                if (arr1[j] < arr1[j + 1]) {
+                    var box = arr1[j];
+                    arr1[j] = arr1[j + 1];
+                    arr1[j + 1] = box;
+                }
+            }
+        }
+        console.log(arr1);
+    </script>
+</body>
+
+</html>

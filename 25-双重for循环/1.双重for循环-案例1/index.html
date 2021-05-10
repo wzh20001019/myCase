@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.打印三角形
+        var str = ''; //声明一个空的变量
+        for (var i = 1; i <= 10; i++) { //外层for循环
+            for (var j = 1; j <= 10; j++) { //里层的for循环
+                str += '★';
+            }
+            str += '\n'; //里层for循环完自动换行
+        }
+        console.log(str);
+
+        // 2.打印倒三角
+        var str1 = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++) {
+                str1 += '★';
+            }
+            str1 += '\n';
+        }
+        console.log(str1);
+
+        // 3.打印正三角形
+        var str2 = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 1; j <= i; j++) {
+                str2 += '★';
+            }
+            str2 += '\n';
+        }
+        console.log(str2);
+    </script>
+</body>
+
+</html>

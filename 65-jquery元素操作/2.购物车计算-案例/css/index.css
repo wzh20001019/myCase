@@ -1,0 +1,94 @@
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+.table {
+	margin: 50px auto 0;
+	border-collapse: collapse;
+}
+
+.table tr {
+	
+}
+
+.table tr th,
+.table tr td {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	height: 50px;
+}
+
+.table tr th {
+	background-color: skyblue;
+}
+
+.table tr td {
+	background-color: aqua;
+}
+
+.remove a {
+	color: red;
+}
+.table .num a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 22px;
+	height: 22px;
+	background-color: #ccc;
+}
+
+.table .num input {
+	outline: none;
+	border: none;
+	padding: 0;
+	width: 45px;
+	height: 20px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+
+.js {
+	margin: 0 auto;
+	width: 800px;
+	height: 50px;
+	background-color: aqua;
+}
+
+.js a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float: right;
+	width: 200px;
+	height: 100%;
+	color: #fff;
+	font-size: 25px;
+	background-color: red;
+}
+
+.js div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float: right;
+	width: 200px;
+	height: 100%;
+	color: #333;
+}
+
+.js div span {
+	margin: 0 7px 0 7px;
+	color: red;
+	font-size: 18px;
+}

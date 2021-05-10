@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <ul class="wrap">
+        <li class="box">
+            <a href="javascript:;">微博</a>
+            <span></span>
+            <ul class="ul">
+                <li>
+                    <a href="javascript:;">私信</a>
+                </li>
+                <li>
+                    <a href="javascript:;">评论</a>
+                </li>
+                <li>
+                    <a href="javascript:;">@我</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="box">
+            <a href="javascript:;">博客</a>
+            <span></span>
+            <ul class="ul">
+                <li>
+                    <a href="javascript:;">博客评论</a>
+                </li>
+                <li>
+                    <a href="javascript:;">未读提醒</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="box">
+            <a href="javascript:;">邮箱</a>
+            <span></span>
+            <ul class="ul">
+                <li>
+                    <a href="javascript:;">免费邮箱</a>
+                </li>
+                <li>
+                    <a href="javascript:;">vip邮箱</a>
+                </li>
+                <li>
+                    <a href="javascript:;">企业邮箱</a>
+                </li>
+                <li>
+                    <a href="javascript:;">新浪邮箱</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        var lis = document.querySelectorAll('.box');
+        // console.log(lis);
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                this.children[2].style.display = 'block';
+                this.children[1].style.transform = 'rotateZ(-135deg)';
+            }
+
+            lis[i].onmouseout = function() {
+                this.children[2].style.display = 'none';
+                this.children[1].style.transform = 'rotateZ(45deg)';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+#box1{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	margin: 100px auto;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	transform: rotate(45deg);                 	/* 顺时针旋转45度 */
+}
+#box1::before,#box1::after{
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	border-radius: 50%;           /*长方体上部为半圆*/
+}
+#box1::before{
+	left: -55px;
+}
+#box1::after{
+	top: -55px;
+} 

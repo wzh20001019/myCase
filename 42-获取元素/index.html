@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d旋转相册</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        section {
+            width: 50px;
+            height: 30px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="ul1">
+            <li class="list">1</li>
+            <li class="list">2</li>
+            <li class="list">3</li>
+            <li class="list">4</li>
+            <li class="list">5</li>
+            <li class="list">6</li>
+        </ul>
+    </div>
+    <button id="btn">abc</button>
+    <input type="search" name="search">
+    <section>123</section>
+    <script>
+        // 1.获取页面中ID的元素对象
+        var id = document.getElementById('ul1');
+        console.log(id);
+
+        // 2.获取页面中标签对象集合
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+
+        // 3.获取页面中指定的类名元素
+        var class1 = document.getElementsByClassName('list');
+        console.log(class1);
+
+        // 4.H5新增 获取页面中的选择器   querySelector('选择器')  返回第一个元素对象
+        var idm = document.querySelector('#ul1'); //获取ID元素
+        console.log(idm);
+
+        var class2 = document.querySelector('.list'); // 获取页面中类名元素
+        console.log(class2);
+
+        var liss = document.querySelector('li');
+        console.log(liss);
+
+        // 5.返回指定选择器的所有元素
+        var all1 = document.querySelectorAll('.list');
+        var all2 = document.querySelectorAll('ul');
+        console.log(all1);
+        console.log(all2);
+
+        // 6.获取特殊的元素  获取html  body标签
+        var htmls = document.documentElement;
+        console.log(htmls);
+
+        var bodys = document.body;
+        console.log(bodys);
+
+        // 7.事件基础  
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            alert('123');
+        }
+
+        var section = document.querySelector('section');
+        section.onclick = function() {
+            alert('被选中了');
+        }
+
+        var inputs = document.querySelector('input');
+        // console.log(inputs);
+        inputs.onblur = function() { //onfocus onblur多用于表单
+            alert('fff');
+        }
+    </script>
+</body>
+
+</html>

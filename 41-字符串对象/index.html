@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.查找相同字符(数组)出现的位置和次数
+        // var str = 'abcfcobegacgfoachxcabxa';
+        // var index = str.indexOf('a');
+        // var num = 0;
+        // while (index !== -1) {
+        //     console.log(index); //打印位置
+        //     num++; //打印次数
+        //     index = str.indexOf('a', index + 1);
+        // }
+        // console.log(num); //出现的次数
+
+        // var arr = ['a', 'b', 'd', 'e', 'b', 'f', 'b', 'c', 'b'];
+        // var index1 = arr.indexOf('b');
+        // var num1 = 0;
+        // while (index1 !== -1) {
+        //     console.log(index1); //打印位置
+        //     num1++;
+        //     index1 = arr.indexOf('b', index1 + 1);
+        // }
+        // console.log(num1);
+
+        // 2.根据位置返回字符
+        // var str = 'abcdefg';
+        // console.log(str.charAt(5));
+        // console.log(str[4]);
+        // console.log(str.charCodeAt(0)); //返回ASCII值  用来判断用户按了哪个键
+
+        // 3.统计出最多的字符和次数
+        // (1).筛选字符到新的对象中
+        // var str = 'abjiavfauahadnakcavgasrda';
+        // var object = {};
+        // for (var i = 0; i < str.length; i++) {
+        //     var chars = str.charAt(i); //遍历所有的字符串元素
+        //     if (object[chars]) { //object[chars]得到的属性值
+        //         object[chars]++; //相同元素自增1
+        //     } else {
+        //         object[chars] = 1;
+        //     }
+        // }
+        // console.log(object);
+
+        // // (2).遍历对象  (for in)  得到出现最多的字符和次数  
+        // var max = 0;
+        // var ch = ''; //创建一个空的字符串
+        // for (var k in object) {
+        //     if (object[k] > max) {
+        //         ch = k; //得到属性名
+        //         max = object[k]; //得到属性值
+        //     }
+        // }
+        // console.log(ch, max);
+
+        // 4.字符串的操作方法
+        // var str = 'abcdef';
+
+        // console.log(str.concat('gt')); //等同于 +
+        // console.log(str.substr(2, 3)); //从索引号为2开始截取  截取3个
+        // console.log(str.slice(2, 4)); //从索引号为2开始截取 到索引号5结束  （不包括结束的索引号）
+        // console.log(str.substring(2, 4)); //和slice相同   不能为负数
+
+        // 5.小案例
+        var str = 'abaasdffggghhjjkkgfddsssss3444343';
+        console.log(str.length); //字符串的长度
+        console.log(str.charAt(3)); //得到指定 位置(索引号) 的字符
+        console.log(str.indexOf('s')); //得到 第一个这个字符 在字符串的位置  (没有这元素，返回-1)
+
+        while (str.indexOf('g') !== -1) {
+            str = str.replace('g', '22');
+        }
+        console.log(str); //通过循环替换字符串中的字符
+
+        console.log(str.substring(1, 5)); //截取1-5的字符串，结束的字符不会取到
+
+        //找到以上出现最多的字符，以及出现的次数
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i); //遍历字符串 得到每一个字符
+            if (obj[chars]) { //得到的属性值
+                obj[chars]++;
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        console.log(obj); //以对象的形式保存不同的字符 和次数
+
+        var max = 0;
+        var cha = ''; //创建一份空的变量
+        for (var k in obj) { //利用for in 遍历对象
+            if (obj[k] > max) {
+                cha = k; //得到属性名
+                max = obj[k]; //得到属性值
+            }
+        }
+        console.log(cha, max); //输出出现最多的字符，以及次数
+    </script>
+</body>
+
+</html>

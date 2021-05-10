@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>小球连线</title>
+		<style>
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
+
+			canvas {
+				display: block;
+				background: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas></canvas>
+	</body>
+
+	<script>
+		let canvas = document.querySelector('canvas')
+		let ctx = canvas.getContext('2d')
+
+		let allType = '0123456789abcdef'
+		let allTypeArr = allType.split('')
+
+		let ballArr = []
+
+		canvas.width = document.documentElement.offsetWidth
+		canvas.height = document.documentElement.offsetHeight
+
+		function Ball(x, y) {
+			this.x = x ? x : parseInt(Math.random() * (canvas.width - 40) + 20)
+			this.y = y ? y : parseInt(Math.random() * (canvas.height - 40) + 20)
+
+			this.r = 2
+			this.color = getColor()
+
+			this.dx = parseInt(Math.random() * 10 - 5)
+			this.dy = parseInt(Math.random() * 10 - 5)
+
+			ballArr.push(this)
+			this.index = ballArr.length - 1
+		}
+
+		Ball.prototype.render = function () {
+			ctx.beginPath()
+
+			ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false)
+
+			ctx.globalAlpha = 1
+
+			ctx.fillStyle = this.color
+
+			ctx.fill()
+
+			for (let i = this.index; i < ballArr.length; i++) {
+				if (Math.abs(ballArr[i].x - this.x) < 150 && Math.abs(ballArr[i].y - this.y) < 150) {
+					ctx.beginPath()
+					ctx.moveTo(this.x, this.y)
+					ctx.lineTo(ballArr[i].x, ballArr[i].y)
+
+					ctx.closePath()
+
+					ctx.globalAlpha =
+						10 / Math.sqrt(Math.pow(ballArr[i].x - this.x, 2) + Math.pow(ballArr[i].y - this.y, 2))
+
+					ctx.strokeStyle = this.color
+					ctx.stroke()
+				}
+			}
+		}
+
+		Ball.prototype.update = function () {
+			if (this.x < 0 || this.x > canvas.width - this.r) {
+				this.dx = -this.dx
+			}
+
+			if (this.y < 0 || this.y > canvas.height - this.r) {
+				this.dy = -this.dy
+			}
+			this.x -= this.dx
+			this.y -= this.dy
+		}
+
+		function getColor() {
+			let color = '#'
+
+			for (let i = 0; i < 6; i++) {
+				let num = parseInt(Math.random() * 16)
+				color += allTypeArr[num]
+			}
+
+			return color
+		}
+
+		for (let i = 0; i < 200; i++) {
+			new Ball()
+		}
+
+		setInterval(function () {
+			ctx.clearRect(0, 0, canvas.width, canvas.height)
+			ballArr.forEach(ball => {
+				ball.update()
+				ball.render()
+			})
+		}, 10)
+
+		canvas.addEventListener('click', function (e) {
+			new Ball(e.offsetX, e.offsetY)
+		})
+	</script>
+</html>

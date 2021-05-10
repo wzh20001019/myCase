@@ -1,0 +1,58 @@
+body{
+	animation: sky 15s linear infinite;
+	background-color: skyblue;
+}
+
+@keyframes sky{
+    from,to{
+        background-color: skyblue;
+    }
+    50%{
+        background-color: black;
+    }
+}
+
+.sky{
+    position: relative;
+	margin: 130px auto;
+	width: 50vmin;
+    height: 50vmin;
+}
+
+.sun,.moon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+}
+.sun{
+    background: gold;
+    animation: sun 15s linear infinite;
+}
+@keyframes sun{
+    50%{
+        background: white;
+        box-shadow: 0 0 5em white,0 0 5em white,0 0 5em white,0 0 5em white;
+    }
+}
+.moon{
+    animation: moon 15s linear infinite;
+}
+
+@keyframes moon{
+    from{
+        transform: translateX(-110%);
+        transform: translateX(-110%);
+        background-color: lightgray;
+    }
+    50%{
+        background-color: black;
+    }
+    to{
+        transform: translateX(110%);
+        transform: translateX(110%);
+        background-color: lightgray;
+    }
+}

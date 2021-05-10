@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        div {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        // 1.高阶函数的使用
+        function fn(a, b, callback) {
+            console.log(a + b);
+            callback && callback(); //判断函数是否存在 存在则执行函数 不存在则不执行
+        }
+
+        fn(2, 4, function() {
+            $("div").animate({
+                left: 600
+            }, function() {
+                $(this).css("background-color", "aqua");
+            });
+        });
+
+        // 2.闭包
+        function father() {
+            var num = 10;
+
+            function son() {
+                console.log(num);
+            }
+            son();
+        }
+        father();
+    </script>
+</body>
+
+</html>

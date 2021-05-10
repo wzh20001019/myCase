@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="next" unicode="&#59042;" d="M340.688 65.76l11.312-11.328a16 16 0 0 1 22.624 0L685.76 365.552a16 16 0 0 1 0 22.64L374.624 699.312a16 16 0 0 1-22.624 0l-11.312-11.312a16 16 0 0 1 0-22.624l288.496-288.496-288.496-288.512a16 16 0 0 1 0-22.624z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="icon-test" unicode="&#58940;" d="M192 448c0 141.152 114.848 256 256 256s256-114.848 256-256-114.848-256-256-256-256 114.848-256 256z m710.624-409.376l-206.88 206.88A318.784 318.784 0 0 1 768 448c0 176.736-143.264 320-320 320S128 624.736 128 448s143.264-320 320-320a318.784 318.784 0 0 1 202.496 72.256l206.88-206.88 45.248 45.248z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="back" unicode="&#59099;" d="M538.288 697.376l-11.312 11.312a16 16 0 0 1-22.64 0L187.312 391.664a16 16 0 0 1 0-22.64L504.336 52a16 16 0 0 1 22.64 0l11.312 11.312a16 16 0 0 1 0 22.624l-294.4 294.4 294.4 294.4a16 16 0 0 1 0 22.64z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

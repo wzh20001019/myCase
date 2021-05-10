@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .box {
+            margin: 150px auto;
+            width: 100px;
+            height: 100px;
+            transition: all .5s;
+            background: linear-gradient(to left, aqua, pink);
+        }
+        
+        .current {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to left, aqua, pink);
+            transform: rotateZ(720deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        $(".box").click(function() {
+            $(this).toggleClass("current");
+        })
+    </script>
+</body>
+
+</html>

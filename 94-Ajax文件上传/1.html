@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: #fff;
+            text-shadow: .1em .1em .2em black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let json = '{"name": "wzh", "age": 20, "sex": "男"}';
+        let json1 = '["asd", 20, [1, 2, 3], true, null, {"name": "zxc", "age": 30}]';
+        let obj = JSON.parse(json);
+        let arr = JSON.parse(json1);
+        console.log(obj);
+        console.log(arr);
+        console.log('------------------');
+
+        let jsonStr1 = JSON.stringify(obj);
+        let jsonStr2 = JSON.stringify(arr);
+        console.log(jsonStr1);
+        console.log(jsonStr2);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks');
+        xhr.send();
+
+        xhr.addEventListener('readystatechange', function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let json = xhr.responseText;
+                let obj = JSON.parse(json);
+                console.log(obj);
+            }
+        });
+        console.log('-----------------------');
+
+        let xhr1 = new XMLHttpRequest;
+        xhr1.open('POST', 'http://www.liulongbin.top:3006/api/addbook');
+        xhr1.setRequestHeader('content-type', 'application/x-www-form-urlencode');
+        xhr1.send('{"bookname": "asd"}');
+        xhr1.addEventListener('readystatechange', function() {
+            console.log(xhr1.readyState);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap .box2 {
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box1">
+            <ul class="ul">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+        <div class="box2">
+
+        </div>
+    </div>
+
+    <script>
+        var ul = document.querySelector('.ul');
+        console.log(ul);
+
+        var box1 = ul.parentNode;
+        console.log(box1);
+
+        var wrap = box1.parentNode;
+        console.log(wrap);
+
+        var lis1 = ul.childNodes;
+        // console.log(lis1);
+
+        for (var i = 0; i < lis1.length; i++) {
+            var arr = [];
+            if (lis1[i].nodeType == 1) {
+                console.log(lis1[i]);
+            }
+        }
+
+        var lis = ul.children;
+        console.log(lis);
+
+        var first = ul.firstElementChild;
+        console.log(first);
+
+        var last = ul.lastElementChild;
+        console.log(last);
+
+        var nfirst = ul.children[0];
+        console.log(nfirst);
+
+        var nlast = ul.children[ul.children.length - 1];
+        console.log(nlast);
+    </script>
+</body>
+
+</html>

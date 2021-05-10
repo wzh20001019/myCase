@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .btn {
+            margin: 50px 0 0 580px;
+            width: 100px;
+            height: 25px;
+        }
+        
+        .wrap {
+            margin: 40px auto;
+            width: 200px;
+            height: 400px;
+        }
+        
+        .box1 {
+            float: left;
+            width: 100%;
+            height: 30px;
+        }
+        
+        .box1 button {
+            margin-left: 15px;
+        }
+        
+        .box2 {
+            float: left;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(to right, aqua, red);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">修改透明度</button>
+    <div class="wrap">
+        <div class="box1">
+            <button>淡入</button>
+            <button>淡出</button>
+            <button>切换</button>
+        </div>
+        <div class="box2"></div>
+        <script>
+            $(function() {
+                $(".wrap button").eq(0).click(function() {
+                    $(".box2").fadeIn(700);
+                });
+
+                $(".wrap button").eq(1).click(function() {
+                    $(".box2").fadeOut(700);
+                });
+
+                $(".wrap button").eq(2).click(function() {
+                    $(".box2").stop().fadeToggle(700);
+                });
+
+                $(".btn").click(function() {
+                    $(".box2").fadeTo(1000, .5);
+                });
+            })
+        </script>
+    </div>
+
+</body>
+
+</html>

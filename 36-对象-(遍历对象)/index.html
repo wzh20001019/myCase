@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.对象
+        var dog = {
+            username: '可可',
+            type: '阿拉斯加犬',
+            older: 5,
+            color: 'brown red',
+            skills: function() {
+                console.log('bark');
+                console.log('showFilm');
+            }
+        }
+        console.log(dog.type);
+        console.log(dog.color);
+        console.log(dog.older);
+        console.log(dog['username']);
+        dog.skills();
+
+        // 2.利用 new Object创建对象
+        var obj = new Object(); //创建一个空的对象
+        obj.uname = '鸣人';
+        obj.sex = '男';
+        obj.older = 19;
+        obj.skill = function() {
+            console.log('影分身术');
+        }
+        console.log(obj.uname);
+        console.log(obj['sex']);
+        obj.skill();
+
+        // 3.利用构造函数
+        function St(name, type, blood) {
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function(gj) {
+                console.log(gj);
+            }
+        }
+        var lp = new St('廉颇', '力量型', '500血量');
+        console.log(lp.name);
+        console.log(lp['type']);
+        lp.attack('近战');
+
+        var hy = new St('后羿', '射手型', '100血量');
+        console.log(hy.name);
+        console.log(hy['blood']);
+        hy.attack('远程');
+
+        // 4.遍历对象
+        var obj = {
+            name: '张三',
+            weigth: '75kg',
+            height: '180cm',
+            say: function() {
+                console.log('Hi~');
+            }
+        }
+
+        var obj1 = new Object();
+        obj1.name = '李四';
+        obj1.height = '175cm';
+        obj1.say = function() {
+            console.log('你好！');
+        }
+        for (var k in obj1) {
+            console.log(k);
+            console.log(obj1[k]);
+        }
+    </script>
+</body>
+
+</html>

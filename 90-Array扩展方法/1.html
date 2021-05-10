@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.实例方法  find()
+        var arr1 = [{
+            id: 1,
+            name: 'abc'
+        }, {
+            id: 2,
+            name: 'qwe'
+        }];
+
+        let target = arr1.find(item => {
+            return item.id == 2;
+        });
+        console.log(target);
+
+        // 2.实例方法  findIndex()
+        var arr2 = [1, 4, 6, 9, 13];
+        let target1 = arr2.findIndex(value => value >= 6);
+        console.log(target1);
+
+        // 3.实例方法  includes()
+        var arr3 = ['a', 3, 7, 'c'];
+        console.log(arr3.includes(3));
+        console.log(arr3.includes('c'));
+        console.log(arr3.includes(5));
+    </script>
+</body>
+
+</html>

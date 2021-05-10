@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .current {
+            color: aqua;
+        }
+        
+        .back {
+            background: linear-gradient(to right, pink, aqua);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>这是一个小li</li>
+        <li>这是一个小li</li>
+        <li>这是一个小li</li>
+        <li>这是一个小li</li>
+        <li>这是一个小li</li>
+    </ul>
+
+    <input type="text">
+
+    <script>
+        $(function() {
+            $("ul").on("click", "li", function(e) {
+                $(this).toggleClass("current");
+                e.stopPropagation();
+            });
+
+            $(document).on({
+                click: function() {
+                    $("body").toggleClass("back");
+                },
+            });
+
+            // $(document).off();
+            // $(document).off("click");
+            // $("ul").off("click", "li");
+
+            // $(document).click();
+            // $("ul li").trigger("click");
+            $("ul li").triggerHandler("click");
+
+            $("ul li:last").one({
+                click: function() {
+                    $(this).css("color", "red");
+                }
+            });
+
+            $("input").on({
+                focus: function(e) {
+                    // e.preventDefault();
+                    // e.stopPropagation();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

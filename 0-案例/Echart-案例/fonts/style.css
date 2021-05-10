@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('icomoon.eot?fy6c5e');
+    src: url('icomoon.eot?fy6c5e#iefix') format('embedded-opentype'), url('icomoon.ttf?fy6c5e') format('truetype'), url('icomoon.woff?fy6c5e') format('woff'), url('icomoon.svg?fy6c5e#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home2:before {
+    content: "\e901";
+}
+
+.icon-camera:before {
+    content: "\e90f";
+}
+
+.icon-diamonds:before {
+    content: "\e919";
+}
+
+.icon-connection:before {
+    content: "\e91b";
+}
+
+.icon-cart:before {
+    content: "\e93a";
+}
+
+.icon-phone:before {
+    content: "\e942";
+}
+
+.icon-phone-hang-up:before {
+    content: "\e943";
+}
+
+.icon-location:before {
+    content: "\e947";
+}
+
+.icon-location2:before {
+    content: "\e948";
+}
+
+.icon-bubble2:before {
+    content: "\e96e";
+}
+
+.icon-spinner3:before {
+    content: "\e97c";
+}
+
+.icon-search:before {
+    content: "\e986";
+}
+
+.icon-trophy:before {
+    content: "\e99e";
+}
+
+.icon-fire:before {
+    content: "\e9a9";
+}
+
+.icon-volume-increase:before {
+    content: "\ea2b";
+}
+
+.icon-volume-decrease:before {
+    content: "\ea2c";
+}
+
+.icon-arrow-up2:before {
+    content: "\ea3a";
+}
+
+.icon-arrow-down2:before {
+    content: "\ea3e";
+}
+
+.icon-radio-checked2:before {
+    content: "\ea55";
+}
+
+.icon-opera:before {
+    content: "\eade";
+}
+
+.icon-codepen:before {
+    content: "\eae8";
+}

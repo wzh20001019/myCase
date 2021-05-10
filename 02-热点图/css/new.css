@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+}
+
+.wrap {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 100px auto;
+    background-color: gray;
+}
+
+.wrap .box1 {
+    position: absolute;
+    top: 70px;
+    right: 100px;
+}
+
+.wrap .box2 {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+
+.wrap .box3 {
+    position: absolute;
+    bottom: 50px;
+    right: 400px;
+}
+
+.wrap .box1 .dotted,
+.wrap .box2 .dotted,
+.wrap .box3 .dotted {
+    width: 8px;
+    height: 8px;
+    background-color: #09f;
+    border-radius: 50%;
+}
+
+.wrap div[class^="pulse"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #009dfd;
+    border-radius: 50%;
+    animation: move 2s linear infinite;
+}
+
+.wrap div.pulse2 {
+    animation-duration: .6s;
+}
+
+.wrap div.pulse3 {
+    animation-duration: 1.3s;
+}
+
+@keyframes move {
+    0% {}
+    60% {
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+    }
+    100% {
+        width: 70px;
+        height: 70px;
+        opacity: 0;
+    }
+}

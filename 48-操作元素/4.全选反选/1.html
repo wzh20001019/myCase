@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        input {
+            margin-left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <input type="checkbox" name="" id="">
+    </div>
+    <div class="box2">
+        <input type="checkbox" name="" id="">
+    </div>
+    <div class="box2">
+        <input type="checkbox" name="" id="">
+    </div>
+    <div class="box2">
+        <input type="checkbox" name="" id="">
+    </div>
+    <div class="box2">
+        <input type="checkbox" name="" id="">
+    </div>
+
+    <script>
+        let box1 = document.querySelector('.box1 input'),
+            box2s = document.querySelectorAll('.box2 input');
+        // console.log(box1.getAttribute('type'));
+
+        console.log(box1.parentNode.childNodes);
+
+        // box1.setAttribute('data-index', 1);
+        // console.log(box1.getAttribute('data-index'));
+        // console.log(box1.dataset.index);
+        // box1.removeAttribute('type')
+        // box1.removeAttribute('name')
+
+        box1.onclick = function() {
+            for (let i = 0; i < box2s.length; i++) {
+                box2s[i].checked = this.checked;
+            }
+        }
+
+        for (let i = 0; i < box2s.length; i++) {
+            box2s[i].onclick = function() {
+                let flag = true;
+                for (let j = 0; j < box2s.length; j++) {
+                    if (!box2s[j].checked) {
+                        flag = false;
+                    }
+                }
+                box1.checked = flag;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

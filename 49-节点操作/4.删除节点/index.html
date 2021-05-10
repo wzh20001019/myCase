@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin: 10px 0 0 20px;
+        }
+        
+        ul li {
+            margin-top: 10px;
+            list-style: none;
+            width: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <button>删除</button>
+    <ul>
+        <li>1.abcdef</li>
+        <li>2.abcdef</li>
+        <li>3.abcdef</li>
+        <li>4.abcdef</li>
+        <li>5.abcdef</li>
+    </ul>
+
+    <script>
+        var ul = document.querySelector('ul'); //获取ul元素
+        var btn = ul.previousElementSibling; //获取按钮元素
+
+
+        btn.onclick = function() { //给按钮注册点击事件
+            if (ul.children.length == 0) { //判断长度是否为0
+                this.disabled = true; //禁用按钮
+            } else {
+                ul.removeChild(ul.children[ul.children.length - 1]); //删除节点
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.冒泡排序
+        function sort(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var arr1 = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = arr1;
+                    }
+                }
+            }
+            return arr;
+        }
+        var re = sort([2, 4, 1, 5, 3]);
+        console.log(re);
+    </script>
+</body>
+
+</html>

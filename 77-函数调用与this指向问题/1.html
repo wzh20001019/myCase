@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 1.普通函数
+        function fn() {
+            console.log(this);
+        }
+        fn();
+
+        // 2.对象的方法 函数
+        var obj = {
+            say: function() {
+                console.log(this);
+            },
+            sing: function() {
+                console.log(123);
+            }
+        }
+        obj.say();
+
+        // 3.绑定事件函数
+        var body = document.body;
+        body.onclick = function() {
+            console.log(this);
+        }
+
+        // 4.定时器函数
+        setInterval(function() {
+            console.log(123);
+        }, 1000);
+
+        // 5.自动调用函数
+        (function() {
+            console.log(this);
+        })
+        ();
+
+        // 6.构造函数
+        function Str() {
+            console.log(this);
+        }
+        new Str();
+    </script>
+</body>
+
+</html>

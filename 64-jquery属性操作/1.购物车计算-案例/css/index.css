@@ -1,0 +1,55 @@
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+.table {
+	margin: 50px auto;
+	border-collapse: collapse;
+}
+
+.table tr {
+	
+}
+
+.table tr th,
+.table tr td {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	height: 50px;
+}
+
+.table tr th {
+	background-color: skyblue;
+}
+
+.table tr td {
+	background-color: aqua;
+}
+.table .num a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 22px;
+	height: 22px;
+	background-color: #ccc;
+}
+
+.table .num input {
+	outline: none;
+	border: none;
+	padding: 0;
+	width: 45px;
+	height: 20px;
+	text-align: center;
+	border: 1px solid #ccc;
+}

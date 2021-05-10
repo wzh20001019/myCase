@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .wrap {
+            margin: 80px auto;
+            width: 200px;
+            height: 400px;
+        }
+        
+        .box1 {
+            float: left;
+            width: 100%;
+            height: 30px;
+        }
+        
+        .box1 button {
+            margin-left: 15px;
+        }
+        
+        .box2 {
+            float: left;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(to right, aqua, red);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box1">
+            <button>上拉</button>
+            <button>下拉</button>
+            <button>切换</button>
+        </div>
+        <div class="box2"></div>
+
+        <script>
+            $(function() {
+                $(".box1 button").eq(0).click(function() {
+                    $(".box2").stop().slideUp();
+                });
+
+                $(".box1 button").eq(1).click(function() {
+                    $(".box2").stop().slideDown();
+                });
+
+                $(".box1 button").eq(2).click(function() {
+                    $(".box2").stop().slideToggle();
+                })
+
+                $(".box2").hover(function() {
+                    $(this).hide();
+                }, function() {
+                    $(this).show();
+                })
+            })
+        </script>
+    </div>
+
+</body>
+
+</html>

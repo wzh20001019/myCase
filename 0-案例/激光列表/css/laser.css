@@ -1,0 +1,59 @@
+body{
+	height: 100vh;
+	margin: 0;
+	display: flex;        /* 开启弹性盒模型 ,只被本身的内容撑开*/
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	box-shadow: 0 10px 30px #fff;       /*左右水平  上下  模糊程度  颜色*/
+}
+li{
+	position: relative;
+	padding: 20px 70px;       /*内边距,直接将盒子撑开,不用设置宽高, 上下  左右*/
+	text-align: center;      /* 文本居中*/
+	color: #fff;
+	cursor: pointer;
+}
+
+li::before{
+	content: "";        /*激活伪元素*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -90;               /*两个区块的绝对定位重合,调整大小可以优先显示*/
+	background-color: #3fff00;    /*背景颜色: 浅绿色*/
+	transform: scaleY(0);         /*比例为0,隐藏*/
+	transition: transform .6s;    /* 过渡效果:对象  时间*/
+	transform-origin: bottom;      /*改变元素基点:底部结束*/
+}
+li::after{
+	content: "";        /*激活伪元素*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -90;               /*两个区块的绝对定位重合,调整大小可以优先显示*/
+	background-color: #3fff00;    /*背景颜色: 浅绿色*/
+	transform: scaleY(0);         /*比例为0,隐藏*/
+	transition: transform .6s;    /* 过渡效果:对象  时间*/
+	transform-origin: bottom;      /*改变元素基点:底部结束*/
+	filter: blur(40px);            /* 滤镜:模糊程度    高斯模糊*/
+}
+
+li:hover::before{
+	transform-origin: top;            /*改变元素基点:底部开始*/
+	transform: scaleY(1);            /*比例为1,显示*/
+}
+li:hover::after{
+	transform-origin: top;            /*改变元素基点:底部开始*/
+	transform: scaleY(1);            /*比例为1,显示*/
+}

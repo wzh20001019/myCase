@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrap {
+    position: relative;
+    margin: 100px auto;
+    width: 520px;
+    height: 280px;
+    overflow: hidden;
+    background-color: aqua;
+}
+
+.wrap .arrow-left,
+.wrap .arrow-right {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    font-size: 35px;
+    color: #fff;
+    z-index: 2;
+}
+
+.wrap .arrow-left {
+    left: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.wrap .arrow-right {
+    right: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.wrap .ul1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+    height: 280px
+}
+
+.wrap .ul1 li {
+    float: left;
+    width: 520px;
+    height: 280px;
+    cursor: pointer;
+}
+
+.wrap .ul1 li img {
+    width: 100%;
+    height: 100%;
+}
+
+.wrap .ul2 {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.wrap .ul2 li {
+    margin-right: 8px;
+    float: left;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+
+.wrap .ul2 li:last-child {
+    margin: 0;
+}
+
+.wrap .ul2 .cor {
+    background-color: orange;
+}

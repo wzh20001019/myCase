@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .wrap {
+            margin: 100px auto;
+            width: 600px;
+            height: 150px;
+        }
+        
+        .wrap input {
+            outline: none;
+            width: 200px;
+            height: 20px;
+        }
+        
+        .wrap .pw {
+            margin-top: 20px;
+        }
+        
+        .wrap span {
+            display: inline-block;
+            margin-left: 15px;
+            height: 30px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <form action="#">
+            <input type="text" class="user"><span>请输入8位数用户名</span><br>
+            <input type="password" class="pw"><span>请输入6-14位密码</span>
+        </form>
+    </div>
+
+    <script>
+        var user = document.querySelector('.user'),
+            pw = document.querySelector('.pw'),
+            sp1 = user.nextElementSibling,
+            sp2 = pw.nextElementSibling;
+
+        var reg1 = /^[0-9]{8}$/, //正则表达式
+            reg2 = /^[a-zA-Z0-9_-]{6,14}$/;
+
+        user.addEventListener('blur', function() {
+            if (reg1.test(this.value)) {
+                sp1.innerHTML = '用户名输入正确';
+                sp1.style.color = 'green';
+            } else {
+                sp1.innerHTML = '用户名输入错误';
+                sp1.style.color = 'red';
+
+                // this.addEventListener('focus', function() {
+                //     this.value = '';
+                // });
+            }
+        });
+
+        pw.addEventListener('blur', function() {
+            if (reg2.test(this.value)) {
+                sp2.innerHTML = '密码格式正确';
+                sp2.style.color = 'green';
+            } else {
+                sp2.innerHTML = '密码格式错误';
+                sp2.style.color = 'red';
+
+                // this.addEventListener('focus', function() {
+                //     this.value = '';
+                // });
+            }
+        });
+    </script>
+</body>
+
+</html>

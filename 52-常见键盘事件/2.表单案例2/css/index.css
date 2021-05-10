@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+.wrap {
+    margin: 80px auto;
+    width: 280px;
+    height: 65px;
+}
+
+.wrap .box {
+    box-sizing: border-box;
+    display: none;
+    line-height: 30px;
+    position: relative;
+    width: 280px;
+    height: 30px;
+    padding: 0 10px;
+    color: #111;
+    border: 1px solid #ccc;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.wrap .box::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: -14px;
+    width: 0;
+    height: 0;
+    border-width: 7px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.wrap input {
+    margin: 7px 0 0 10px;
+    outline: none;
+    width: 250px;
+    height: 25px;
+    font-size: 14px;
+}

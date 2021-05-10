@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.minBox {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 172px;
+    height: 250px;
+    border: 1px solid #555;
+    cursor: pointer;
+    background: url(../image/1.jpg);
+    background-size: 100% 100%;
+}
+
+.minBox .move {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(231, 231, 0);
+    cursor: move;
+    opacity: .5;
+}
+
+.maxBox {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    width: 281px;
+    height: 400px;
+    border: 1px solid #555;
+    overflow: hidden;
+}
+
+.maxBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

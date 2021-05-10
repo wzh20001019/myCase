@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Father(uname, age) {
+				this.name = uname;
+				this.age = age;
+			}
+			
+			function Son(uname, age, score) {
+				Father.call(this,uname, age, score);
+				this.score = score;
+				console.log(this);
+			}
+			
+			var son = new Son('abc', 18, 100);
+		</script>
+	</body>
+</html>

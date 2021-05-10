@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div>
+        <input type="password" class="it">
+        <p class="p">请输入6-12位密码</p>
+
+        <script>
+            // 1.获取元素
+            var input = document.querySelector('.it');
+            var p = document.querySelector('.p');
+            // console.log(p);
+
+            // 2.注册事件 处理代码
+            input.onblur = function() {
+                if (this.value.length < 6 || this.value.length > 16) {
+                    p.innerHTML = '输入错误，请输入6-16位密码';
+                    p.style.color = 'red';
+                } else {
+                    p.innerHTML = '输入正确';
+                    p.style.color = 'green'
+                }
+                if (this.value.length == 0) {
+                    p.innerHTML = '请输入6-12位密码';
+                    p.style.color = '#666';
+                }
+
+            }
+        </script>
+    </div>
+</body>
+
+</html>

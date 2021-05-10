@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        ul {
+            margin-top: 100px;
+            margin-left: 300px;
+            padding: 0;
+            list-style: none;
+            height: 50px;
+        }
+        
+        li {
+            position: relative;
+            float: left;
+            margin-right: 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+        }
+        
+        ul .current {
+            width: 200px;
+        }
+        
+        li:last-child {
+            margin-right: 0;
+        }
+        
+        li .small {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background: pink;
+        }
+        
+        li .big {
+            display: none;
+            box-sizing: border-box;
+            padding-right: 10px;
+            width: 200px;
+            height: 50px;
+            text-align: right;
+            background: aqua;
+        }
+        
+        .current .small {
+            display: none
+        }
+        
+        .current .big {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="current">
+            <a href="javascript:;">
+                <section class="small">1</section>
+                <section class="big">111</section>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <section class="small">2</section>
+                <section class="big">222</section>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <section class="small">3</section>
+                <section class="big">333</section>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <section class="small">4</section>
+                <section class="big">444</section>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <section class="small">5</section>
+                <section class="big">555</section>
+            </a>
+        </li>
+    </ul>
+
+    <script>
+        $(function() {
+            $("ul li").mouseenter(function() {
+                $(this).stop().animate({
+                    width: 200
+                }).find(".small").stop().fadeOut(1000).siblings().stop().fadeIn(1000);
+
+                $(this).siblings("li").stop().animate({
+                    width: 50
+                }).find(".small").stop().fadeIn(500).siblings().stop().fadeOut(500);
+            });
+        });
+    </script>
+</body>
+
+</html>

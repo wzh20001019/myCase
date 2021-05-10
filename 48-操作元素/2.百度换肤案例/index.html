@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <ul id="ul">
+        <li>
+            <img src="image/1.jpg" alt="">
+        </li>
+        <li>
+            <img src="image/2.jpg" alt="">
+        </li>
+        <li>
+            <img src="image/3.jpg" alt="">
+        </li>
+        <li>
+            <img src="image/4.jpg" alt="">
+        </li>
+        <li>
+            <img src="image/5.jpg" alt="">
+        </li>
+    </ul>
+
+    <script>
+        // 1.获取元素
+        var body = document.body;
+        var img = document.getElementById('ul').querySelectorAll('img');
+        // console.log(img);
+
+        // 2.注册事件
+        for (var i = 0; i < img.length; i++) {
+            img[i].onclick = function() {
+                body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

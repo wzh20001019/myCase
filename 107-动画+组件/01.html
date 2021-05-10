@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="js/vue.js"></script>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        li {
+            margin: 10px 0;
+            padding-left: 20px;
+            width: 100%;
+            border: 1px solid #777;
+        }
+        
+        .badge {
+            float: right;
+            margin-right: 20px;
+        }
+        
+        label {
+            margin: 0 30px;
+        }
+        
+        .my-enter,
+        .my-leave-to {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        
+        .my-enter-active,
+        .my-leave-active {
+            transition: all .8s ease;
+        }
+        
+        .my-move {
+            transition: all .8s ease;
+        }
+        
+        .my-leave-active {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <com1 @func="init"></com1>
+        <transition-group appear name="my" tag="ul">
+            <li class="list-group-item" v-for="(item, index) in list" :key="item.name" @click="del(index)">
+                <span>{{item.content}}<span>
+                <span class="badge badge-secondary">评论人:{{item.name}}</span>
+            </li>
+        </transition-group>
+    </div>
+
+    <template id="tmp1">
+        <div class="form-inline">
+            <label>name:
+                <input type="text" class="form-control mb-2 mr-sm-2" v-model="name">
+            </label>
+            <label>content:
+                <input type="text" class="form-control mb-2 mr-sm-2" v-model="content">
+            </label>
+            <button type="button" class="btn btn-primary" @click="add">提交</button>
+        </div>
+    </template>
+</body>
+<script>
+    let com1 = {
+        data() {
+            return {
+                name: '',
+                content: ''
+            }
+        },
+        methods: {
+            add() {
+                let ctm = {
+                    name: this.name,
+                    content: this.content
+                }
+
+                let ct = JSON.parse(localStorage.getItem('ctms') || '[]')
+                ct.push(ctm)
+                localStorage.setItem('ctms', JSON.stringify(ct))
+
+                this.name = ''
+                this.content = ''
+                this.$emit('func')
+            }
+        },
+        template: '#tmp1'
+    }
+    let vm = new Vue({
+        el: '.app',
+        data: {
+            info: null,
+            list: []
+        },
+        created() {
+            this.init()
+        },
+        methods: {
+            init() {
+                let ct = JSON.parse(localStorage.getItem('ctms') || '[]')
+                this.list = ct
+            },
+            del(index) {
+                let ct = JSON.parse(localStorage.getItem('ctms') || '[]')
+                ct.splice(index, 1)
+                localStorage.setItem('ctms', JSON.stringify(ct))
+                this.init()
+            }
+        },
+        components: {
+            com1
+        }
+    })
+</script>
+
+</html>

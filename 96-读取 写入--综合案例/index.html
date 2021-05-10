@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        div {
+            position: absolute;
+            left: 10px;
+        }
+        
+        .box1 {
+            top: 30px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to right, pink, aqua);
+        }
+        
+        .box2 {
+            top: 200px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to left, red, hotpink);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+<script>
+    let box1 = document.querySelector('.box1'),
+        box2 = document.querySelector('.box2');
+
+    let timer1 = null;
+    let timer2 = null;
+
+    timer1 = setInterval(function() {
+        if (box1.offsetLeft >= 1000) {
+            box1.style.left = 10 + 'px';
+        }
+        box1.style.left = box1.offsetLeft + 5 + 'px';
+    }, 50);
+
+    timer2 = setInterval(function() {
+        if (box2.offsetLeft >= 1000) {
+            box2.style.left = 10 + 'px';
+        }
+        box2.style.left = box2.offsetLeft + 3 + 'px';
+    }, 50);
+</script>
+
+</html>

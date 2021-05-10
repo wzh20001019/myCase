@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <table class="table">
+        <tr>
+            <th>单价</th>
+            <th>number</th>
+            <th>小计</th>
+        </tr>
+        <tr>
+            <td class="dj">￥12.50</td>
+            <td class="num">
+                <a href="javascript:;" class="j">-</a>
+                <input type="text" value="1" />
+                <a href="javascript:;" class="z">+</a>
+            </td>
+            <td class="xj">￥12.50</td>
+        </tr>
+        <tr>
+            <td class="dj">￥14.60</td>
+            <td class="num">
+                <a href="javascript:;" class="j">-</a>
+                <input type="text" value="1" />
+                <a href="javascript:;" class="z">+</a>
+            </td>
+            <td class="xj">￥14.60</td>
+        </tr>
+        <tr>
+            <td class="dj">￥17.80</td>
+            <td class="num">
+                <a href="javascript:;" class="j">-</a>
+                <input type="text" value="1" />
+                <a href="javascript:;" class="z">+</a>
+            </td>
+            <td class="xj">￥17.20</td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            //				var index = $(".num input").prop("value");
+            $(".num .j").click(function() {
+                var index = $(this).siblings("input").prop("value");
+                if (index == 1) {
+                    return false;
+                }
+                index--;
+                $(this).siblings("input").prop("value", index);
+                var n = $(this).parent().siblings(".dj").html().substr(1);
+                var x = (n * index).toFixed(2);
+                $(this).parent().siblings(".xj").html('￥' + x);
+            });
+
+            $(".num .z").click(function() {
+                var index = $(this).siblings("input").prop("value");
+                index++;
+                $(this).siblings("input").prop("value", index);
+                var n = $(this).parent().siblings(".dj").html().substr(1);
+                var x = (n * index).toFixed(2);
+                $(this).parent().siblings(".xj").html('￥' + x);
+            });
+
+            $(".num input").change(function() {
+                var index = $(this).prop("value");
+                var n = $(this).parent().siblings(".dj").html().substr(1);
+                var x = (n * index).toFixed(2);
+                $(this).parent().siblings(".xj").html('￥' + x);
+                if (index <= 1) {
+                    $(this).prop("value", 1);
+                    var y = (n * 1).toFixed(2);
+                    $(this).parent().siblings(".xj").html("￥" + y);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>炫彩小球</title>
+		<style>
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
+
+			canvas {
+				cursor: pointer;
+				background: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas></canvas>
+	</body>
+
+	<script>
+		let canvas = document.querySelector('canvas')
+		let ctx = canvas.getContext('2d')
+
+		canvas.width = document.documentElement.offsetWidth
+		canvas.height = document.documentElement.offsetHeight
+
+		let allType = '0123456789abcdef'
+		let allTypeArr = allType.split('')
+		let timer = null
+		let ballArr = []
+
+		function getColor() {
+			let color = '#'
+
+			for (let i = 0; i < 6; i++) {
+				let num = parseInt(Math.random() * allTypeArr.length)
+				color += allTypeArr[num]
+			}
+
+			return color
+		}
+
+		function Ball(x, y, r) {
+			this.x = x
+			this.y = y
+			this.r = r
+			this.color = getColor()
+
+			this.dx = parseInt(Math.random() * 12 - 6)
+			this.dy = parseInt(Math.random() * 12 - 6)
+
+			ballArr.push(this)
+		}
+
+		Ball.prototype.render = function () {
+			ctx.beginPath()
+			ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false)
+
+			ctx.fillStyle = this.color
+			ctx.fill()
+		}
+
+		Ball.prototype.update = function () {
+			this.x += this.dx
+			this.y += this.dy
+
+			this.r -= 0.5
+
+			if (this.r < 0) {
+				this.remove()
+			}
+		}
+
+		Ball.prototype.remove = function () {
+			for (let i = 0; i < ballArr.length; i++) {
+				// console.log(this)
+				// console.log(ballArr[i])
+				if (ballArr[i] == this) {
+					ballArr.splice(i, 1)
+				}
+			}
+		}
+
+		//click测试
+		canvas.addEventListener('mousemove', function (e) {
+			new Ball(e.offsetX, e.offsetY, 30)
+		})
+
+		setInterval(function () {
+			ctx.clearRect(0, 0, canvas.width, canvas.height)
+			for (let i = 0; i < ballArr.length; i++) {
+				ballArr[i].update()
+
+				if (ballArr[i]) {
+					ballArr[i].render()
+				}
+			}
+		}, 30)
+	</script>
+</html>

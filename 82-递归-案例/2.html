@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = [{
+            id: 1,
+            name: '家电',
+            good: [{
+                id: 11,
+                name: '冰箱',
+                good: [{
+                    id: 111,
+                    name: '格力',
+                }, {
+                    id: 112,
+                    name: '海尔',
+                }]
+            }, {
+                id: 12,
+                name: '电视',
+            }],
+        }, {
+            id: 2,
+            name: '手机',
+        }];
+
+        function s(json, id) {
+            var o = {};
+            json.forEach(function(item) {
+                if (item.id == id) {
+                    o = item;
+                    // return item;
+                } else if (item.good && item.good.length > 0) {
+                    o = s(item.good, id);
+                }
+            });
+            return o;
+        }
+
+        console.log(s(data, 1));
+        console.log(s(data, 2));
+        console.log(s(data, 11));
+        console.log(s(data, 12));
+        console.log(s(data, 111));
+        console.log(s(data, 112));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.container .row div[class*="col"] {
+    background-color: skyblue;
+}
+
+.box1 .row div[class*="col"] {
+    height: 50px;
+    background-color: orange;
+}
+
+.box1 .box2 div:first-of-type {
+    height: 25px;
+    background-color: pink;
+}
+
+.box1 .box2 div:last-of-type {
+    height: 25px;
+    background-color: purple;
+}

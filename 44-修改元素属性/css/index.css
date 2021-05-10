@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+button {
+    margin: 10px;
+    border: none;
+    border: 1px solid #ccc;
+    background-color: orange;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    width: 400px;
+    height: 250px;
+}
+
+img {
+    width: 100%;
+}

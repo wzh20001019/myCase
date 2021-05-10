@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 封装 Ajax函数
+        function get(url) {
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('GET', url);
+
+            xhr.send();
+
+            xhr.addEventListener('readystatechange', function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let json = xhr.responseText;
+                    let obj = JSON.parse(json);
+
+                    function ca() {
+                        console.log(this);
+                    }
+                    ca.call(obj);
+                }
+            });
+        }
+
+        get('http://www.liulongbin.top:3006/api/getbooks');
+    </script>
+
+</body>
+
+</html>

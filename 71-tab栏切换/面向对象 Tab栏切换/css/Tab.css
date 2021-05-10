@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tab {
+    position: relative;
+    top: 100px;
+    left: 300px;
+    width: 600px;
+    height: 350px;
+    border: 1px solid #222222;
+}
+
+.tab .tab-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.tab .tab-top ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 560px;
+    height: 100%;
+    border-bottom: 1px solid #222222;
+}
+
+.tab .tab-top ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    float: left;
+    width: 80px;
+    height: 51px;
+    border-right: 1px solid #222222;
+    border-bottom: 1px solid #222222;
+    cursor: pointer;
+}
+
+.tab .tab-top ul .current {
+    border-bottom: 1px solid #fff;
+}
+
+.tab .tab-top ul li a {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 10px;
+    background: #000;
+    border-bottom-left-radius: 32px;
+}
+
+.tab-top ul li input {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
+
+.tab .tab-top ul li a:hover {
+    color: #f00;
+}
+
+.tab .tab-top .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    border-bottom: 1px solid #222222;
+}
+
+.tab-top .btn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    width: 19px;
+    height: 19px;
+    font-size: 18px;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+
+.tab .tab-bottom {
+    position: absolute;
+    top: 51px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+}
+
+.tab .tab-bottom section {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 550px;
+    height: 250px;
+}
+
+.tab .tab-bottom .different {
+    display: block;
+}
+
+.tab .tab-bottom input {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 500px;
+    height: 200px;
+}

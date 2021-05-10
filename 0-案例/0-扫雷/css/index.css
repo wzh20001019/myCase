@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+}
+
+.mines {
+    margin: 50px auto;
+}
+
+.mines .btn {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.mines .btn button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: skyblue;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+
+.mines .btn button:first-child {
+    margin-left: 0;
+}
+
+.mines .btn .current {
+    background-color: aqua;
+}
+
+.game table {
+    border-spacing: 1px;
+    background-color: #777;
+    margin: 0 auto;
+}
+
+.game table td {
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #bbb;
+    border: 2px solid;
+    border-color: #fff #a1a1a1 #a1a1a1 #fff;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.game table .zero {
+    background: #dedede;
+    color: black;
+    border: none;
+}
+
+.game table .one {
+    background: #dedede;
+    color: blue;
+    border: none;
+}
+
+.game table .two {
+    background: #dedede;
+    color: green;
+    border: none;
+}
+
+.game table .three {
+    background: #dedede;
+    color: red;
+    border: none;
+}
+
+.game table .four {
+    background: #dedede;
+    color: orangered;
+    border: none;
+}
+
+.game table .five {
+    background: #dedede;
+    color: purple;
+    border: none;
+}
+
+.game table .six {
+    background: #dedede;
+    color: rgb(124, 0, 0);
+    border: none;
+}
+
+.game table .seven {
+    background: #dedede;
+    color: rgb(209, 47, 74);
+    border: none;
+}
+
+.game table .eight {
+    background: #dedede;
+    color: rgb(1, 1, 107);
+    border: none;
+}
+
+.mines .text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mine {
+    background: #777 url(../images/1.png) no-repeat;
+    background-size: 100%;
+}
+
+.flag {
+    background: #ccc url(../images/2.png) no-repeat;
+    background-size: cover;
+}

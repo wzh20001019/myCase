@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+div {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.r1 {
+    background-color: aqua;
+}
+
+.r2 {
+    background-color: red;
+}
+
+.r3 {
+    background-color: orange;
+}
+
+.r4 {
+    background-color: palevioletred;
+}
+
+.r5 {
+    background-color: green;
+}

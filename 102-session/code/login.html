@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.all.js"></script>
+    <script src="./jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        form {
+            margin: 100px auto;
+            width: 400px;
+        }
+        
+        .layui-btn-normal {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" required lay-verify="required|username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-block">
+                <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script>
+    let form = layui.form
+
+    form.verify({
+        username: function(value) { //value：表单的值、item：表单的DOM对象
+            if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
+                return '用户名不能有特殊字符';
+            }
+            if (/(^\_)|(\__)|(\_+$)/.test(value)) {
+                return '用户名首尾不能出现下划线\'_\'';
+            }
+            if (/^\d+\d+\d$/.test(value)) {
+                return '用户名不能全为数字';
+            }
+            if (!/^[\S]{2,6}$/.test(value)) {
+                return '用户名要求2到6位,不能有空格';
+            }
+        },
+        pwd: [
+            /^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'
+        ]
+    })
+</script>
+<script>
+    $(function() {
+        $('form').on('submit', function(e) {
+            e.preventDefault()
+            $.ajax({
+                method: 'POST',
+                url: '/api/login',
+                data: $(this).serialize(),
+                success: res => {
+                    if (res.status !== 0) {
+                        return layer.msg('登陆失败')
+                    }
+                    layer.msg('登陆成功')
+                    $(this)[0].reset();
+                    location.href = './index.html'
+                }
+            })
+        })
+    })
+</script>
+
+</html>

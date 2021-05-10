@@ -1,0 +1,196 @@
+html {
+  font-size: 50px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 21.33333333px;
+  }
+}
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 25.6px;
+  }
+}
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 26.66666667px;
+  }
+}
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 27.6px;
+  }
+}
+@media screen and (min-width: 424px) {
+  html {
+    font-size: 28.26666667px;
+  }
+}
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 50px;
+  }
+}
+body {
+  margin: 0 auto;
+  min-width: 320px;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, STHeiTi, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+div {
+  box-sizing: border-box;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* 顶部盒子-start */
+.ft {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  width: 15rem;
+  height: 1.76rem;
+  background-color: #ffdb47;
+}
+.ft .ft1 {
+  width: 0.72rem;
+  height: 1.2rem;
+  margin: 0.34rem 0 0 0.68rem;
+}
+.ft .ft1 img {
+  width: 100%;
+  height: 100%;
+}
+.ft .ft2 {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 0.34rem;
+  width: 10.44rem;
+  height: 100%;
+}
+.ft .ft2 a {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 1.2rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+.ft .ft2 a span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 1.4rem;
+  color: #ccc;
+  font-size: 0.6rem;
+}
+.ft .ft2 a i {
+  position: absolute;
+  top: -0.14rem;
+  left: 0.4rem;
+  width: 0.72rem;
+  height: 0.72rem;
+}
+.ft .ft2 a i img {
+  width: 100%;
+  height: 100%;
+}
+.ft .ft3 {
+  width: 0.72rem;
+  height: 1.2rem;
+  margin: 0.34rem 0.68rem 0 0;
+}
+.ft .ft3 img {
+  width: 100%;
+  height: 100%;
+}
+.bn-box {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 1.76rem;
+  width: 15rem;
+  height: 5.2rem;
+  background: url(../upload/1-banner.png) no-repeat;
+  background-size: 15rem auto;
+}
+.bn-box .banner {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 90%;
+  height: 4.8rem;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+.bn-box .banner img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer !important;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 15rem;
+  height: 5.68rem;
+}
+.nav img {
+  width: 100%;
+  height: 100%;
+}
+.nav a {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 2.84rem;
+  background-color: #ececec;
+}
+.nav a i {
+  margin: 0.48rem auto 0;
+  width: 1.68rem;
+  height: 1.68rem;
+}
+.nav a span {
+  text-align: center;
+  font-size: 0.5rem;
+  color: #a0a0a0;
+}

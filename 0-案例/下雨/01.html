@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            /* background: url('./images/1.jpg') no-repeat;
+            background-size: cover; */
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let timer1 = null
+        let timer2 = null
+
+        function createRain() {
+            let rain = document.createElement('div')
+            let k = 0
+
+            rain.style.position = 'absolute'
+            rain.style.top = 0 + 'px'
+            rain.style.left = parseInt(Math.random() * 1200) + 'px'
+            rain.style.width = 3 + 'px'
+            rain.style.height = 110 + 'px'
+            rain.style.backgroundSize = '100%'
+            rain.style.opacity = parseInt(Math.random() * 10) / 8
+            rain.style.background = 'url(' + './images/2.png' + ')'
+
+            document.body.appendChild(rain)
+
+            timer1 = setInterval(function() {
+                let top = rain.style.top
+                k++
+                if (rain.offsetTop >= 460) {
+                    rain.parentNode.removeChild(rain)
+                }
+                rain.style.top = parseInt(Math.pow(k, 1.7)) + 'px'
+            }, 10)
+        }
+
+        timer2 = setInterval(function() {
+            createRain()
+        }, 20)
+    </script>
+</body>
+
+</html>

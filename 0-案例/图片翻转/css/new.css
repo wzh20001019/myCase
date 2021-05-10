@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+}
+#list_wrap{
+    margin: 50px auto;
+    width: 800px;
+    height: 400px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;       /* 清除默认小黑圆点 */
+}
+
+ul::after{         /* 伪类  清除浮动 */
+    content: "";   /* 激活伪元素 */
+    display: block;
+    clear: both;
+}
+
+li{
+    position: relative;
+    float: left;
+    margin: 10px 25px 0 25px;
+    width: 150px;
+    height: 300px;
+    perspective: 1000px;    /* 远景 有立体感 */
+}
+li:nth-child(2n){
+    transform: translateY(50px);        /* 相对原来位置上下移动 */
+}
+
+li img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+li img.qian{
+    position: absolute;
+    transform: rotateY(0deg);   /* 变换：角度 */
+    transition: transform 1s;   /* 过渡：对象 时间 */
+    backface-visibility: hidden;   /* 隐藏背面 */
+    transform-style: preserve-3d;    /* 固定3D场景,防止变换不稳定  防止有的浏览器会失效 */
+}
+li:hover img.qian{
+    transform: rotateY(180deg);   /* 变换：角度 */
+}
+
+li img.hou{
+    position: absolute;
+    transform: rotateY(-180deg);   /* 变换：角度 负的180度图片才是反面*/
+    transition: transform 1s;   /* 过渡：对象 时间 */
+    backface-visibility: hidden;   /* 隐藏背面 */
+    transform-style: preserve-3d;    /* 固定3D场景,防止变换不稳定  防止有的浏览器会失效 */
+}
+li:hover img.hou{
+    transform: rotateY(0deg);   /* 变换：角度 */
+}

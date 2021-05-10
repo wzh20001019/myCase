@@ -1,0 +1,157 @@
+@import "common";
+
+// 定义html字体大小
+@basefont: 50px;
+
+// body样式
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    line-height: 1.5;
+    font-family: Arial,Helvetica,STHeiTi,sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 顶部盒子-start */
+.ft {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    width: 750rem / @basefont;
+    height: 88rem / @basefont;
+    background-color: #ffdb47;
+    .ft1 {
+
+        width: 36rem / @basefont;
+        height: 60rem / @basefont;
+        margin: 17rem / @basefont 0  0 34rem / @basefont;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .ft2 {
+        display: flex;
+        margin: 0 auto;
+        padding-top: 17rem / @basefont;
+        width: 522rem / @basefont;
+        height: 100%;
+        a {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 60rem / @basefont;
+            border-radius: 30rem / @basefont;
+            overflow: hidden;
+            background-color: #fff;
+            span {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-left: 70rem / @basefont;
+                color: #ccc;
+                font-size: 30rem / @basefont;
+            }
+            i {
+                position: absolute;
+                top: -.14rem;
+                left: .4rem;
+                width: 36rem / @basefont;
+                height: 36rem / @basefont;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .ft3 {
+        width: 36rem / @basefont;
+        height: 60rem / @basefont;
+        margin: 17rem / @basefont 34rem / @basefont 0 0;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+}
+
+// banner-开始
+.bn-box {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 88rem / @basefont;
+    width: 15rem;
+    height: 260rem / @basefont;
+    background: url(../upload/1-banner.png) no-repeat;
+    background-size: 15rem auto;
+    .banner {
+        position: absolute;
+        left: 5%;
+        bottom: 0;
+        width: 90%;
+        height: 240rem / @basefont;
+        overflow: hidden;
+        border-radius: 20rem / @basefont;
+        img {
+            width: 100%;
+            height: 100%;
+            cursor: pointer !important;
+        }
+    }
+}
+
+// nav-部分
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 15rem;
+    height: 284rem / @basefont;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        height: 142rem / @basefont;
+        background-color: rgb(236, 236, 236);
+        i {
+            margin: .48rem auto 0;
+            width: 84rem / @basefont;
+            height: 84rem / @basefont;
+        }
+        span {
+            text-align: center;
+            font-size: 25rem / @basefont;
+            color: rgb(160, 160, 160);
+        }
+    }
+
+}

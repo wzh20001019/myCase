@@ -1,0 +1,242 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#top{
+	margin: auto;
+	width: 1200px;
+	height: 100px;
+	background-color: midnightblue;
+}
+#top1{
+	float: left;
+	margin-top: 25px;
+	margin-left: 30px;
+	width: 100px;
+	height: 50px;
+}
+#top2{
+	float: left;
+	margin-left: 50px;
+	width: 700px;
+	height: 100px;
+}
+#top2 a{
+	text-decoration: none;
+	line-height: 100px;
+	color: white;
+	font-size: 13px;
+	margin-left: 30px;
+}
+#top2 a:hover{
+	color: red;
+}
+#top3{
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+	width: 200px;
+	height: 60px;
+}
+#top3 input{
+	background-color: midnightblue;
+	border: 1px solid white;
+	margin-top: 10px;
+	width: 150px;
+	height: 30px;
+	outline: none;
+}
+#top4{
+	float: right;
+	margin-top: 10px;
+	margin-right: 16px;
+	border: 1px solid white;
+	width: 30px;
+	height: 30px;
+}
+#top4 span{
+	cursor: pointer;
+}
+#center{
+	position: relative;
+	margin: auto ;
+	width: 1200px;
+	height: 500px;
+}
+#center .a1{
+	width: 1200px;
+	height: 500px;
+}
+.iconfont2{
+	position: absolute;
+	left: 50px;
+	top: 50%;
+	width: 30px;
+	height: 60px;
+}
+.iconfont3{
+	position: absolute;
+	left: 1120px;
+	top: 200px;
+	width: 30px;
+	height: 60px;
+}
+#top3 a{
+	text-decoration: none;
+}
+#center span:hover{
+	color: orange;
+}
+#c3 ul{
+	position: relative;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -61px;
+}
+#c3 li{
+	float: left;
+	list-style: none;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 1px solid gray;
+	margin-right: 10px;
+}
+#center li:hover{
+	background-color: orange;
+}
+#text{
+	margin: auto;
+	margin-top: 30px;
+	width: 1100px;
+	height: 120px;
+	text-align: center;
+}
+.text1{
+	color: black;
+	font-size: 30px;
+	font-family: "黑体";
+}
+.text2{
+	margin-top: 20px;
+	color: gray;
+	font-size: 13px;
+}
+#im{
+	margin: auto;
+	margin-top: 0px;
+	width: 1200px;
+	height: 480px;
+}
+#im li{
+	position: relative;
+	list-style: none;
+	float: left;
+	margin-left: 30px;
+	margin-top: 15px;
+	width: 350px;
+	height: 200px;
+}
+#im img{
+	width: 350px;
+	height: 200px;
+	cursor: pointer;
+}
+#im p{
+	position: absolute;
+	padding-left: 20px;
+	left: 0px;
+	bottom: 0px;
+	background: rgba(0,0,0,.2);
+	width: 330px;
+	height: 40px;
+	line-height: 40px;
+}
+#im a{
+	text-decoration: none;
+	color: white;
+}
+#im a:hover{
+	color: red;
+}
+.li1:hover,.li2:hover,.li3:hover,.li4:hover,.li5:hover,.li6:hover{
+	box-shadow: 3px 3px 3px rgba(0,0,0,.8);
+}
+#bt{
+	margin: auto;
+	margin-top: 20px;
+	width: 1200px;
+	height: 260px;
+	background-color: #404143;
+}
+#bt1{
+	float: left;
+	margin-top: 40px;
+	margin-left: 20px;
+	width: 120px;
+	height: 200px;
+}
+#bt2{
+	float: left;
+	margin-top: 40px;
+	margin-left: 30px;
+	width: 120px;
+	height: 200px;
+}
+#bt3{
+	float: left;
+	margin-top: 40px;
+	margin-left: 30px;
+	width: 120px;
+	height: 200px;
+}
+#bt4{
+	float: left;
+	margin-top: 40px;
+	margin-left: 30px;
+	width: 140px;
+	height: 200px;
+}
+#bt5{
+	float: left;
+	margin-top: 40px;
+	margin-left: 30px;
+	width: 120px;
+	height: 200px;
+}
+#bt6{
+	float: left;
+	margin-top: 40px;
+	margin-left: 120px;
+	width: 300px;
+	height: 200px;
+}
+#bt6 p{
+	text-align: center;
+}
+#bt7{
+	margin-top: 30px;
+}
+#bt span{
+	color: white;
+	font-size: 16px;
+}
+#bt a{
+	text-decoration: none;
+	font-size: 12px;
+	color: gray;
+}
+#bt a:hover{
+	color: orange;
+}
+.b1{
+	float: left;
+	width: 116px;
+	height: 160px;
+}
+.b2{
+	float: left;
+	margin-left: 20px;
+	width: 116px;
+	height: 160px;
+}

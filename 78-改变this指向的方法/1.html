@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+
+    <script>
+        var obj = {
+            name: 'sdf',
+            flag: true,
+        };
+
+        // 1.call()
+        function Father(uname, age, sex) {
+            console.log(this);
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        Father.call(obj, 'ax', 23, '女');
+
+        function Son(uname, age, sex) {
+            Father.call(this, uname, age, sex);
+            // console.log(this);
+        }
+
+        var son = new Son('abc', 21, '男');
+        console.log(son);
+
+        // 2.apply()
+        var arr = [3, 5, 29, 73, 39, 58, 123];
+        var max = Math.max.apply(Math, arr);
+        var min = Math.min.apply(Math, arr);
+        console.log(max);
+        console.log(min);
+
+        // 3.bind()
+        function sun(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+
+        var f = sun.bind(obj, 2, 5);
+        f();
+
+        var btnS = document.querySelectorAll('button');
+        var index = 10;
+        for (var i = 0; i < btnS.length; i++) {
+            btnS[i].addEventListener('click', function() {
+                this.disabled = true;
+                setTimeout(function() {
+                    this.disabled = false;
+                }.bind(this), 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    font-size: 14px;
+    color: #000;
+    background-color: #f2f2f2;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* footer-开始 */
+
+.ft {
+    width: 100%;
+    height: 300px;
+    background: url(../upload/1.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.ft .search-box {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 540px;
+    height: 44px;
+    background-color: transparent;
+}
+
+.ft .search-box .search {
+    flex: 1;
+    margin: 8px 5px;
+    height: 28px;
+    padding: 2px 5px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.ft .search-box .search span {
+    position: relative;
+    margin-left: 40px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.ft .search-box .search span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -32px;
+    width: 22px;
+    height: 100%;
+    background: url(../img/sprite2x@-1.png) no-repeat 4px 3px;
+    background-size: 22px auto;
+}
+
+.ft .search-box a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+    margin-right: 3px;
+}
+
+.ft .search-box a::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: url(../img/sprite2x@-1.png) no-repeat 1px -37px;
+    background-size: 22px auto;
+}
+
+.ft .search-box a span {
+    margin-top: 1px;
+    color: #fff;
+}
+
+
+/* nav-导航栏--开始 */
+
+.nav {
+    margin: 0 auto;
+    margin-top: -30px;
+    width: 96%;
+    height: 64px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nav ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.nav ul li {
+    flex: 1;
+}
+
+.nav ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    background-color: #fff;
+}
+
+.nav li a i {
+    width: 40px;
+    height: 40px;
+}
+
+.nav li a span {
+    margin-top: -3px;
+}
+
+.nav li a .ico1 {
+    background: url(../img/sprite2x@-2.png) no-repeat;
+    background-size: 40px auto;
+}
+
+.nav li a .ico2 {
+    background: url(../img/sprite2x@-2.png) no-repeat 0 -40px;
+    background-size: 40px auto;
+}
+
+.nav li a .ico3 {
+    background: url(../img/sprite2x@-2.png) no-repeat 0 -80px;
+    background-size: 40px auto;
+}
+
+.nav li a .ico4 {
+    background: url(../img/sprite2x@-2.png) no-repeat 0 -120px;
+    background-size: 40px auto;
+}
+
+.nav li a .ico5 {
+    background: url(../img/sprite2x@-2.png) no-repeat 0 -160px;
+    background-size: 40px auto;
+}
+
+
+/* 中部列表 */
+
+.main-nav {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 96%;
+    height: 195px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-nav .box1 {
+    border-right: 1px solid #fb8650;
+    background: linear-gradient(to right, #fa5956, #fb8650);
+}
+
+.main-nav .box2 {
+    background: linear-gradient(to right, #4b8fed, #53bced);
+}
+
+.main-nav .box3 {
+    border-bottom: none;
+    background: linear-gradient(to right, #34c2aa, #6cd557);
+}
+
+.main-nav .box1,
+.main-nav .box2,
+.main-nav .box3 {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid #fff;
+}
+
+.main-nav a {
+    display: flex;
+    color: #fff;
+}
+
+.main-nav .a1 {
+    flex: 31%;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #fff;
+}
+
+.main-nav .a1 span {
+    margin-left: 15px;
+}
+
+.main-nav .a2 {
+    flex: 23%;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #fff;
+}
+
+.main-nav .a3 {
+    flex: 23%;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #fff;
+}
+
+.main-nav .a4 {
+    flex: 23%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav .box1 .a3 {
+    flex: 46%;
+    border-right: none;
+}

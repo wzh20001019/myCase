@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.案例1
+        function Computer(color, weigth, brand, model, ) {
+            this.color = color;
+            this.weigth = weigth;
+            this.brand = brand;
+            this.model = model;
+            this.movie = function(movie) {
+                console.log(movie);
+            }
+            this.sing = function(sing) {
+                console.log(sing);
+            }
+            this.games = function(games) {
+                console.log(games);
+            }
+            this.code = function(code) {
+                console.log(code);
+            }
+        }
+        var pt = new Computer('wihte', 3 + 'kg', 'Lenovo', 'i5');
+        console.log(pt.color);
+        console.log(pt.model);
+        console.log(pt['weigth']);
+        pt.games('英雄联盟');
+
+        // 2.案例2
+        function Button(width, height, bgcolor) {
+            this.width = width;
+            this.height = height;
+            this.bgcolor = bgcolor;
+            this.onclick = function(onclick) {
+                console.log(onclick);
+            }
+        }
+        var bt = new Button('50px', '30px', 'skyblue');
+        console.log(bt.width);
+        console.log(bt.height);
+        console.log(bt['height']);
+        console.log(bt.bgcolor);
+        bt.onclick('haver');
+
+        // 3.案例3
+        function Car(weigth, color, brand) {
+            this.weigth = weigth;
+            this.color = color;
+            this.brand = brand;
+            this.manned = function(manned) {
+                console.log(manned);
+            }
+            this.pull = function(pull) {
+                console.log(pull);
+            }
+            this.ploughing = function(ploughing) {
+                console.log(ploughing);
+            }
+        }
+        var cr = new Car('2000kg', 'black', '丰田');
+        console.log(cr.weigth);
+        console.log(cr.color);
+        console.log(cr['brand']);
+        cr.manned('可以乘坐3个人');
+        cr.pull('送啤酒');
+
+        // 4.案例4
+        var myMath = {
+            PI: 3.141592653,
+            max: function() {
+                max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+            min: function() {
+                min = arguments[0];
+                for (var j = 1; j < arguments.length; j++) {
+                    if (arguments[j] < min) {
+                        min = arguments[j];
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(myMath.PI);
+        console.log(myMath.max(1, 4, 9, 27));
+        console.log(myMath.min(3, 1, -10, 67, 28, 39));
+
+        console.log(Math.round(-1.5));
+        console.log(Math.round(-1.81));
+    </script>
+</body>
+
+</html>

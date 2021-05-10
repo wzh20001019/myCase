@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+}
+
+.box1 {
+	margin: 50px auto;
+	width: 100px;
+	height: 100px;
+	background: linear-gradient(to right, pink, aqua);
+}
+
+.current {
+	background: pink;
+}

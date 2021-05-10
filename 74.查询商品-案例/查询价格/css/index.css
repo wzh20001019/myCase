@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+
+.search {
+    position: absolute;
+    top: 0;
+    left: 370px;
+    width: 560px;
+    height: 25px;
+}
+
+.search input[type="text"] {
+    outline: none;
+    margin: 0 3px 0 3px;
+    width: 50px;
+    text-align: center;
+}
+
+.search button {
+    vertical-align: bottom;
+    margin-left: 3px;
+    height: 22px;
+}
+
+.tb {
+    position: absolute;
+    top: 50px;
+    left: 400px;
+}
+
+.tb table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.tb th,
+.tb td {
+    box-sizing: border-box;
+    padding: 0;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #777;
+}
+
+.tb th {
+    border: 1.5px solid #333;
+}
+
+.tb tr th:nth-child(2),
+.tb tr td:nth-child(2) {
+    width: 200px;
+}

@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.w {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.hd-box {
+    width: 100%;
+    height: 60px;
+    background-color: #444;
+}
+
+.top-box {
+    position: relative;
+    height: 100%;
+}
+
+.top-box label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: #ddd;
+}
+
+.top-box input {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding-left: 5px;
+    outline: none;
+    transform: translateY(-50%);
+    width: 220px;
+    height: 22px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+h2 span {
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 7px;
+    padding: 1px 5px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: red;
+    background-color: #ccc;
+}
+
+.main .to {
+    margin-bottom: 40px;
+}
+
+.main .to,
+.main .do {
+    width: 100%;
+}
+
+.main .to li,
+.main .do li {
+    position: relative;
+    margin-top: 8px;
+    margin-left: 2px;
+    width: 100%;
+    height: 30px;
+    background-color: #eee;
+}
+
+.main .do li {
+    background-color: #777;
+}
+
+.main .to li::before,
+.main .do li::before {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: aqua;
+}
+
+.main .to li input,
+.main .do li input {
+    float: left;
+    margin-left: 15px;
+    margin-top: 9px;
+}
+
+.main .to li p,
+.main .do li p {
+    display: block;
+    float: left;
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.main .to li a,
+.main .do li a {
+    display: block;
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: 6px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.main .to li a::before,
+.main .do li a::before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.main ul li a:hover {
+    background-color: aqua;
+}

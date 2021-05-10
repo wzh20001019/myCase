@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="javascript:;">123</a>
+            </li>
+            <li>
+                <a href="javascript:;">123</a>
+            </li>
+            <li>
+                <a href="javascript:;">123</a>
+            </li>
+            <li>
+                <a href="javascript:;">123</a>
+            </li>
+            <li>
+                <a href="javascript:;">123</a>
+            </li>
+            <li>
+                <a href="javascript:;">123</a>
+            </li>
+        </ul>
+        <div class="bigBox">
+            <div>
+                <img src="image/1.jpg" alt="">
+            </div>
+            <div>
+                <img src="image/2.jpg" alt="">
+            </div>
+            <div>
+                <img src="image/3.jpg" alt="">
+            </div>
+            <div>
+                <img src="image/4.jpg" alt="">
+            </div>
+            <div>
+                <img src="image/5.jpg" alt="">
+            </div>
+            <div>
+                <img src="image/6.jpg " alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            $("ul li").mouseenter(function() {
+                var index = $(this).index();
+                $(this).css("background", "linear-gradient(to left, aqua, pink)");
+                $(this).siblings().css("background", "");
+                $(".bigBox div").eq(index).show();
+                $(".bigBox div").eq(index).siblings().hide();
+            });
+
+            $("ul li").eq(0).css("background", "linear-gradient(to left, aqua, pink)");
+        })
+    </script>
+</body>
+
+</html>

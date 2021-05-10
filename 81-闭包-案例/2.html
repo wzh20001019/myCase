@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.ul li {
+				margin-top: 5px;
+				color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="ul">
+			<li>li标签1</li>
+			<li>li标签2</li>
+			<li>li标签3</li>
+			<li>li标签4</li>
+			<li>li标签5</li>
+		</ul>
+		
+		<script>
+			var lis = document.querySelectorAll('.ul li');
+			
+			for (var i = 0; i < lis.length; i++) {
+				(function(i) {
+					setTimeout(function() {
+						console.log(this);
+						console.log(this.innerHTML);
+					}.bind(lis[i]), 2000);
+				})
+				(i);
+			}
+			
+			var st = (function() {
+				var start = 13;  //起步价
+				var total = 0;  //总价
+				return {
+					price: function(n) {
+						if (n < 3) {
+							total = start;
+						} else {
+							total = start + (n - 3) * 5;
+						}
+						return total;
+					},
+					
+					yd: function(flag) {
+						if (flag) {
+							total += 10;
+						} else {
+							total = total;
+						}
+						return total;
+					}
+				}
+			})();
+			
+			console.log(st.price(6));
+			console.log(st.yd(true));
+		</script>
+	</body>
+</html>

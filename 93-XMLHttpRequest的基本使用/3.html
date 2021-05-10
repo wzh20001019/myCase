@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <form action="/login" method="POST">
+        <input type="text" name="user">
+        <input type="password" name="password">
+        <button type="submit">提交</button>
+    </form>
+
+    <script>
+        // $(function() {
+        //     $('form').on('submit', function(e) {
+        //         e.preventDefault();
+        //         let str = $(this).serialize();
+        //         $.get('http://www.liulongbin.top:3006/api/cmtlist', function(res) {
+        //             console.log(res);
+        //         });
+        //     });
+        // });
+
+        let ipt = document.querySelectorAll('form input');
+        let fm = document.querySelector('form');
+        fm.onsubmit = function(e) {
+            e.preventDefault();
+
+        }
+    </script>
+
+</body>
+
+</html>

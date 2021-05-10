@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+            margin: 80px auto;
+            list-style: none;
+            width: 280px;
+            height: 130px;
+        }
+        
+        ul li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            background-color: #ccc;
+        }
+        
+        ul li i {
+            width: 25px;
+            height: 25px;
+            background: url(image/spirit.png) no-repeat;
+            background-size: 25px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><i></i></li>
+        <li><i></i></li>
+        <li><i></i></li>
+        <li><i></i></li>
+        <li><i></i></li>
+        <li><i></i></li>
+        <li><i></i></li>
+        <li><i></i></li>
+    </ul>
+
+    <script>
+        // 1.获取元素
+        var icon = document.querySelectorAll('i');
+
+        // 2.利用for循环给不同的i标签添加背景图片
+        for (var i = 0; i < icon.length; i++) {
+            var index = i * 46;
+            icon[i].style.backgroundPosition = '0  -' + index + 'px';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" placeholder="abcde">
+
+    <script>
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+
+        // 2.注册事件
+        btn.onclick = function() {
+            this.disabled = true;
+            input.placeholder = '请输入内容';
+        }
+    </script>
+</body>
+
+</html>

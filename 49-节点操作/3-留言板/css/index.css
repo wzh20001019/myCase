@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+textarea {
+    margin: 80px 0 0 100px;
+    width: 300px;
+    height: 150px;
+    outline: none;
+    resize: none;
+    color: #333;
+    vertical-align: bottom;
+}
+
+.btn {
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+
+.box {
+    margin: 0;
+    padding: 0;
+    margin: 20px 0 0 100px;
+    list-style: none;
+    width: 320px;
+}
+
+.box li {
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding: 3px 0 0 5px;
+    width: 320px;
+    height: 25px;
+    font-size: 14px;
+    color: red;
+    background-color: skyblue;
+}
+
+.box li a {
+    float: right;
+    text-decoration: none;
+}

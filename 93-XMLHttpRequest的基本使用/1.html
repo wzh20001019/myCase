@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #f00;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        input,
+        button {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            font-size: 12px;
+        }
+        
+        input {
+            box-sizing: border-box;
+            padding-left: 5px;
+        }
+        
+        th,
+        td {
+            margin: 0;
+            padding: 0 0 0 10px;
+            width: 110px;
+            height: 30px;
+            line-height: 30px;
+            text-align: left;
+            font-size: 14px;
+            border: 1px solid #ccc;
+        }
+        
+        .wrap {
+            margin: 0 auto;
+            width: 550px;
+        }
+        
+        .wrap .input {
+            padding: 10px 10px;
+            width: 100%;
+            height: 50px;
+            box-sizing: border-box;
+        }
+        
+        .wrap .input .ipt {
+            float: left;
+            margin-right: 10px;
+            width: 150px;
+            height: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid #ccc
+        }
+        
+        .wrap .input .ipt button {
+            float: left;
+            width: 40px;
+            height: 100%;
+            background: #bbb;
+        }
+        
+        .wrap .input .ipt input {
+            float: left;
+            width: 110px;
+            height: 100%;
+        }
+        
+        .wrap .input .btn {
+            float: left;
+            width: 40px;
+            height: 100%;
+            background: skyblue;
+            border-radius: 5px;
+            color: #fff;
+            vertical-align: bottom;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="input">
+            <div class="ipt">
+                <button>书名</button>
+                <input type="text" placeholder="请输入书名">
+            </div>
+            <div class="ipt">
+                <button>作者</button>
+                <input type="text" placeholder="请输入作者">
+            </div>
+            <div class="ipt">
+                <button>出版社</button>
+                <input type="text" placeholder="请输入出版社">
+            </div>
+            <button class="btn">添加</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>出版社</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        //http:www.liulongbin.top:3006/api/addbook
+        $(function() {
+            create();
+
+            function create() {
+                $('tbody').html('');
+                $.get('http:www.liulongbin.top:3006/api/getbooks', function(res) {
+                    if (res.status != 200) {
+                        return alert('获取数据失败！');
+                    }
+                    $.each(res.data, function(index, dom) {
+                        let tr = $('<tr></tr>');
+                        $.each(dom, function(name, value) {
+                            let td = $('<td>' + value + '</td>');
+                            tr.append(td);
+                        });
+                        let a = $('<td><a href="javascript:;">删除</a></td>');
+                        tr.append(a);
+                        $('tbody').append(tr);
+                    });
+                });
+            }
+
+            function addElement() {
+                let val1 = $('.input').find('input').eq(0).val().trim(),
+                    val2 = $('.input').find('input').eq(1).val().trim(),
+                    val3 = $('.input').find('input').eq(2).val().trim();
+                if (val1 != '' && val2 != '' && val3 != '') {
+                    $.post('http:www.liulongbin.top:3006/api/addbook', {
+                        bookname: val1,
+                        author: val2,
+                        publisher: val3
+                    }, function(res) {
+                        create();
+                    });
+                } else {
+                    if (val1 == '') {
+                        alert('请输入书名');
+                    } else if (val2 == '') {
+                        alert('请输入作者姓名');
+                    } else if (val3 == '') {
+                        alert('请输入出版社名称');
+                    }
+                }
+            }
+
+            $('.btn').on('click', function() {
+                addElement();
+                $('.input').find('input').val('');
+            });
+
+            $('tbody').on('click', 'a', function() {
+                let num = $(this).parents('tr').children('td').eq(0).html();
+                $.get('http:www.liulongbin.top:3006/api/delbook', {
+                    id: num
+                }, function(res) {
+                    create();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

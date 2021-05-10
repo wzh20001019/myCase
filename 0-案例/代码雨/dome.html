@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="taxt/css" href="css/new.css" />
+		<title>代码雨</title>
+		<style>
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
+
+			canvas {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas></canvas>
+
+		<script>
+			var canvas = document.querySelector('canvas')
+			var ctx = canvas.getContext('2d') //画布标签上面的画画方法
+
+			canvas.width = document.documentElement.offsetWidth
+			canvas.height = document.documentElement.offsetHeight
+
+			var text = 'QWERTYUIOPASDFGHJKLZXCVBNM' //输出的文本
+			var size = 17 //字母占地面积
+			var num = Math.floor(canvas.width / size) //显示整数    一行显示多少字母
+
+			var arr = [] //数组  小仓库  存放数据  [0,3,4,8,234,....]
+
+			for (var i = 0; i < num; i++) {
+				//重复做一件事   循环 num 次
+				arr.push(0) //往仓库里面推入 0, 几个0
+			}
+
+			function createFont() {
+				//造字母的工厂
+				ctx.fillStyle = 'rgba(0,0,0,.1)' //逐渐消失
+				ctx.fillRect(0, 0, canvas.width, canvas.height) //渲染画布
+				ctx.fillStyle = 'green' //字体的颜色
+				ctx.font = '18px arial' //字体的大小
+
+				for (var i = 0; i < num; i++) {
+					//for循环  重复做一件事
+					var x = i * size //x的坐标 0123456...*num
+					var y = arr[i] * size //y的坐标  起始坐标都为0
+
+					var random = Math.floor(Math.random() * 26) //随机到一个整数
+					ctx.fillText(text[random], x, y) //随机的整数 随机出现在x,y上
+
+					if (y > canvas.height && Math.random() > 0.95) {
+						//如果y大于画布的高  x轴方向随机产出字母
+						arr[i] = 0 //arr重置为0
+					}
+					arr[i]++ //arr的值  from[0,0,0,...]  ->  [1,1,1...]
+				}
+			}
+
+			setInterval(createFont, 50) //定时器  每隔100毫秒执行一次
+		</script>
+	</body>
+</html>

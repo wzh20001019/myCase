@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            name: 'abc',
+            age: 19,
+            price: 2000,
+        };
+
+        var arr = Object.keys(obj);
+        console.log(arr);
+        // console.log(Object.keys(obj));
+
+        // obj.q = 12;  //添加对象
+        // delete obj.q;  //删除对象
+        console.log(obj);
+
+        Object.defineProperty(obj, 'sd', {
+            value: 100,
+            writable: false, //不可修改
+            enumerable: false, //不能被遍历出来
+            configurable: false, //不能删除
+        });
+        obj.sd = 200;
+        delete obj.sd;
+        console.log(obj);
+        var arr = Object.keys(obj);
+        console.log(arr);
+    </script>
+</body>
+
+</html>

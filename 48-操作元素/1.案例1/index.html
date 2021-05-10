@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div>
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+    </div>
+
+    <script>
+        // 1.获取元素
+        var btn = document.getElementsByClassName('btn');
+        // console.log(btn);
+
+        // 2.注册事件 处理程序
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function() {
+                for (var i = 0; i < btn.length; i++) {
+                    btn[i].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'orange';
+            }
+        }
+    </script>
+</body>
+
+</html>

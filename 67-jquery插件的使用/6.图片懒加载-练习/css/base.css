@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #848484;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+dl {
+    margin: 0;
+}
+
+.w {
+    width: 1000px;
+    margin: 0 auto;
+}

@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: #eee;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 版心 */
+
+.w {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+
+/* 页面头部区域  start */
+
+.hd {
+    width: 100%;
+    height: 120px;
+}
+
+.hd .hd-box {
+    height: 100%;
+    background-color: aqua;
+}
+
+
+/* 到达出现侧边导航兰区域  start */
+
+.block {
+    margin-top: 30px;
+    height: 200px;
+    background-color: #444;
+}
+
+
+/* 页面主体部分  start */
+
+.main {
+    display: block;
+    overflow: hidden;
+}
+
+.main .box1 {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    height: 300px;
+    background-color: pink;
+}
+
+.main .box2 {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    height: 400px;
+    background-color: orange;
+}
+
+.main .box3 {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    height: 440px;
+    background-color: skyblue;
+}
+
+.main .box4 {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    height: 390px;
+    background-color: black;
+}
+
+.main .box5 {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    height: 420px;
+    background-color: red;
+}
+
+
+/* 侧边导航栏  start */
+
+.nav {
+    display: none;
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: 60px;
+}
+
+.nav ul {
+    width: 100%;
+    overflow: hidden;
+}
+
+.nav ul li {
+    width: 100%;
+    height: 60px;
+}
+
+.current {
+    background: linear-gradient(to right, pink, aqua);
+}
+
+.nav ul li a {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: red;
+    border: 1px solid #666;
+}
+
+
+/* 回到顶部按钮  start */
+
+.g-top {
+    display: none;
+    position: fixed;
+    right: 40px;
+    bottom: 60px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-size: 20px;
+    color: red;
+    background-color: orange;
+}
+
+
+/* 页面底部区域  start */
+
+.ft {
+    margin-top: 30px;
+    width: 100%;
+    height: 290px;
+}
+
+.ft .ft-box {
+    height: 100%;
+    background-color: cadetblue;
+}

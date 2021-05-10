@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.新增数组
+        var arr = ['red', 'pink', 'blue', 'skyblue'];
+        arr[4] = 'orange';
+        arr[5] = 'black';
+        // arr = '这样会覆盖原有的数组';
+        console.log(arr);
+
+        // 2.存1-10,10个整数
+        var arr1 = [];
+        for (var i = 0; i < 100; i++) {
+            arr1[i] = i + 1;
+        }
+        console.log(arr1);
+
+        // 3.筛选数组
+        // 1.方法1
+        // var arr2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        // var arr3 = [];
+        // var j = 0;
+        // for (var i = 0; i < arr2.length; i++) {
+        //     if (arr2[i] >= 10) {
+        //         arr3[j] = arr2[i];
+        //         j++;
+        //     }
+        // }
+        // console.log(arr3);
+
+        // 2.方法2
+        var arr2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr3 = [];
+        for (var i = 0; i < arr2.length; i++) {
+            if (arr2[i] >= 10) {
+                arr3[arr3.length] = arr2[i];
+            }
+        }
+        console.log(arr3);
+    </script>
+</body>
+
+</html>

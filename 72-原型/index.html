@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.sun = function() {
+            console.log(this);
+            var sun = 0;
+            for (var i = 0; i < this.length; i++) {
+                sun += this[i];
+            }
+            return sun;
+        }
+
+        var arr = [1, 4, 6, 13, 15];
+        console.log(arr.sun());
+
+        var arr1 = new Array(12, 13, 16, 18);
+        console.log(arr1.sun());
+    </script>
+</body>
+
+</html>

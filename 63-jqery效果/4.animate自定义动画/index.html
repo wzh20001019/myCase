@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .wrap {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        
+        .wrap button {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            border: none;
+            outline: none;
+            border: 1px solid aqua;
+            width: 100px;
+            height: 30px;
+            transform: translateX(-50%);
+            background-color: skyblue;
+        }
+        
+        .wrap .box {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to right, pink, aqua);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <button>点击动画</button>
+        <div class="box"></div>
+    </div>
+
+    <script>
+        $(function() {
+            $(".wrap button").click(function() {
+                $(".wrap .box").animate({
+                    left: 700,
+                    top: 300
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

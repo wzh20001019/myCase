@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+.w {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+section,
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: red;
+}
+
+.box1 {
+    height: 200px;
+    background: linear-gradient(to left, aqua, pink);
+}
+
+.box2 {
+    height: 400px;
+    margin-top: 50px;
+    background: linear-gradient(to right bottom, aqua, pink);
+}
+
+.box3 {
+    margin-top: 40px;
+    height: 300px;
+    background: linear-gradient(to top, skyblue, #f77);
+}
+
+.position {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(to bottom, #f13, #aa3);
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}

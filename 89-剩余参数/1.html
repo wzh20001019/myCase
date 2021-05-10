@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // 1.剩余参数
+        function fn(first, ...args) {
+            let arr = [first, args];
+            return arr;
+        }
+        var val = fn(10, 20, 30, 40);
+        console.log(val);
+
+        let fn1 = (...ar) => ar;
+        var a = fn1(1, 2, 3, 4, 5, 6);
+        console.log(a);
+
+        let arr = ['a', 'b', 'c'];
+        console.log(...arr);
+        let [v1, ...v2] = arr;
+        console.log(v1);
+        console.log(v2);
+
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6, 7];
+        let arr3 = [...arr1, ...arr2];
+        let arr4 = [];
+        console.log(arr3);
+
+        arr4.push(...arr1, ...arr2);
+        console.log(arr4);
+
+        arr1.push(...arr2);
+        console.log(arr1);
+
+        var divS = document.querySelectorAll('ul li');
+        console.log(divS);
+        var divS = [...divS];
+        console.log(divS);
+
+
+        var arrLike = {
+            "0": 2,
+            "1": 4,
+            "2": 6,
+            'length': 3
+        };
+        console.log(arrLike);
+        var newArr = Array.from(arrLike);
+        console.log(newArr);
+
+        var newArr1 = Array.from(arrLike, (i) => {
+            return i * 3;
+        });
+        console.log(newArr1);
+    </script>
+</body>
+
+</html>

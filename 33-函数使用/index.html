@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function a() {
+        //     console.log('123');
+        // }
+        // a();
+
+        // 1.函数的使用
+        // (1).声明函数
+        function getSum(num1, num2) {
+            var num = 0;
+            for (var i = num1; i <= num2; i++) {
+                num += i;
+            }
+            return num; //return返回值
+        }
+        // (2).调用函数
+        console.log(getSum(1, 100));
+
+        // 2.比较两个数的大小
+        function getMax(number1, number2) {
+            if (number1 > number2) {
+                return number1;
+            } else {
+                return number2;
+            }
+        }
+        console.log(getMax(30, 78));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.判断输入的数是否是质数(只能被1和自身整除的数),并弹出结果
+        var x = prompt('请输入一个数');
+
+        function judgment(num) {
+            var num = parseInt(num); //让num字符串变为数字 并变为整数
+
+            // 1.方法一
+            for (var i = 2; i <= num - 1; i++) {
+                if (num % i == 0) {
+                    break;
+                }
+            }
+
+            if (i > num - 1) {
+                return num + '是素数';
+            } else {
+                return num + '是合数';
+            }
+
+            // 2.方法二
+            // var count = 0; //记录整除的次数
+            // for (var i = 2; i <= num - 1; i++) {
+            //     if (num % i == 0) {
+            //         count++;
+            //         break;
+            //     }
+            // }
+
+            // if (count == 0) {
+            //     return num + '是素数';
+            // } else {
+            //     return num + '是合数';
+            // }
+        }
+
+        var re = judgment(x);
+        alert(re);
+    </script>
+</body>
+
+</html>

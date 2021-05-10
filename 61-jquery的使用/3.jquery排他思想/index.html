@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .wrap {
+            margin: 50px auto;
+            width: 310px;
+            height: 60px;
+            border: 1px solid aqua;
+        }
+        
+        .wrap div {
+            display: flex;
+            float: left;
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+        $(function() {
+            $(".wrap div").click(function() {
+                $(this).css("backgroundColor", "orange");
+                $(this).siblings("div").css("backgroundColor", "");
+            });
+        })
+    </script>
+</body>
+
+</html>

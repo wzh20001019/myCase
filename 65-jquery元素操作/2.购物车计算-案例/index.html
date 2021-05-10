@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <table class="table">
+        <tr>
+            <th>单价</th>
+            <th>number</th>
+            <th>小计</th>
+            <th>清除</th>
+        </tr>
+        <tr>
+            <td class="dj">￥12.50</td>
+            <td class="num">
+                <a href="javascript:;" class="j">-</a>
+                <input type="text" value="1" />
+                <a href="javascript:;" class="z">+</a>
+            </td>
+            <td class="xj">￥12.50</td>
+            <td class="remove">
+            	<a href="javascript:;">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="dj">￥14.60</td>
+            <td class="num">
+                <a href="javascript:;" class="j">-</a>
+                <input type="text" value="1" />
+                <a href="javascript:;" class="z">+</a>
+            </td>
+            <td class="xj">￥14.60</td>
+            <td class="remove">
+            	<a href="javascript:;">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="dj">￥17.80</td>
+            <td class="num">
+                <a href="javascript:;" class="j">-</a>
+                <input type="text" value="1" />
+                <a href="javascript:;" class="z">+</a>
+            </td>
+            <td class="xj">￥17.20</td>
+            <td class="remove">
+            	<a href="javascript:;">删除</a>
+            </td>
+        </tr>
+    </table>
+    <div class="js">
+    	<a href="javascript:;">结算</a>
+    	<div class="box1">总价：<span>￥44.90</span></div>
+    	<div class="box2">已选中<span>3</span>件商品</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            //				var index = $(".num input").prop("value");
+            $(".num .j").click(function() {
+                var index = $(this).siblings("input").prop("value");
+                if (index == 1) {
+                    return false;
+                }
+                index--;
+                $(this).siblings("input").prop("value", index);
+                var n = $(this).parent().siblings(".dj").html().substr(1);
+                var x = (n * index).toFixed(2);
+                $(this).parent().siblings(".xj").html('￥' + x);
+                get();
+            });
+
+            $(".num .z").click(function() {
+                var index = $(this).siblings("input").prop("value");
+                index++;
+                $(this).siblings("input").prop("value", index);
+                var n = $(this).parent().siblings(".dj").html().substr(1);
+                var x = (n * index).toFixed(2);
+                $(this).parent().siblings(".xj").html('￥' + x);
+                get();
+            });
+
+            $(".num input").change(function() {
+                var index = $(this).prop("value");
+                var n = $(this).parent().siblings(".dj").html().substr(1);
+                var x = (n * index).toFixed(2);
+                $(this).parent().siblings(".xj").html('￥' + x);
+                if (index <= 1) {
+                    $(this).prop("value", 1);
+                    var y = (n * 1).toFixed(2);
+                    $(this).parent().siblings(".xj").html("￥" + y);
+                }
+                get();
+            });
+            
+            get();
+            function get() {
+            	var content = 0;
+            	var monye = 0;
+            	$(".num input").each(function(index, dom) {
+            		content += parseInt($(dom).val());
+            	});
+            	$(".js .box2 span").html(content);
+            	
+            	$(".xj").each(function(index, dom) {
+            		monye += parseFloat($(dom).text().substr(1));
+            	});
+            	$(".js .box1 span").text('￥' + monye.toFixed(2));
+            }
+            
+            $(".remove a").click(function() {
+            	$(this).parents("tr").remove();
+            	get();
+            });
+        })
+    </script>
+</body>
+
+</html>

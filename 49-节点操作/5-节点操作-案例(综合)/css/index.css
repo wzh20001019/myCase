@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+}
+
+a {
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: red;
+}
+
+.table {
+    margin: 70px auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.table .head {
+    width: 600px;
+    height: 50px;
+}
+
+.table .head .h-tr {
+    display: block;
+    background-color: #ccc;
+}
+
+.head .h-tr th,
+.table .by tr td {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 150px;
+    height: 50px;
+    color: #000;
+    font-size: 18px;
+    border: 1px solid #222;
+}
+
+.table .by {
+    width: 600px;
+    height: 50px;
+}
+
+.table .by tr {
+    display: block;
+    background-color: #eee;
+}
+
+.table .by tr td {
+    text-align: center;
+    height: 40px;
+    color: #222;
+    font-size: 18px;
+    border: 1px solid #222;
+}

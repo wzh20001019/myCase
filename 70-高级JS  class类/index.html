@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        button {
+            float: left;
+            margin: 50px 0 0 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="jia">+</button>
+    <button class="jian">-</button>
+    <script>
+        var jia = document.querySelector('.jia');
+        var jian = document.querySelector('.jian');
+        class Str {
+            constructor(name, age) {
+                this.uname = name;
+                this.uAge = age;
+            }
+        }
+
+        var st = new Str('abc', 19);
+        // console.log(st);
+        // console.log(st.uname);
+        // console.log(st.uAge);
+
+
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            jia() {
+                console.log(this.x + this.y);
+            }
+        }
+
+        class Son extends Father {
+            constructor(x, y) {
+                super(x, y);
+
+                jia.onclick = this.jia();
+                jian.onclick = this.jian();
+            }
+
+            jian() {
+                console.log(this.x - this.y);
+            }
+        }
+
+        var son = new Son(4, 2);
+        // jia.onclick = function() {
+        //     son.jia();
+        // }
+
+        // jian.onclick = function() {
+        //     son.jian();
+        // }
+    </script>
+</body>
+
+</html>

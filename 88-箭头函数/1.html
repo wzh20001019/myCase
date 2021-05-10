@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.箭头函数 () => {}
+        // const fn = (num1, num2) => {
+        //     return num1 + num2;
+        // }
+        const fn = (num1, num2) => num1 + num2; //大括号中只有一句代码 大括号可以省略 return省略
+        var a = fn(3, 5);
+        console.log(a);
+
+        const fn2 = v => { //只有一个参数时小括号可以省略
+            alert(v);
+        };
+        // const fn2 = v => alert(v);
+        fn2(2);
+
+
+        var age = 100;
+        let obj = {
+            name: 'wzh',
+            age: 19,
+            say: () => {
+                console.log(this);
+            }
+        }
+        obj.say();
+
+        function fun() {
+            console.log(this);
+            return () => {
+                console.log(this);
+            }
+        }
+        let q = fun.call(obj);
+        q();
+    </script>
+</body>
+
+</html>

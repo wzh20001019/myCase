@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="tab">
+        <nav class="nav">
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>vue.js</li>
+                <li>node.js</li>
+            </ul>
+        </nav>
+        <div class="box">
+            <div class="lis k">HTML是一门描述性语言</div>
+            <div class="lis">CSS是一门描述性语言</div>
+            <div class="lis">JavaScript是一门脚本语言</div>
+            <div class="lis">vue是JS的扩展语言</div>
+            <div class="lis">node.js可以做后端操作</div>
+        </div>
+    </div>
+
+
+    <script>
+        // 1.获取元素
+        var list = document.querySelectorAll('li');
+        // console.log(list);
+        var test = document.querySelector('.box').querySelectorAll('.lis');
+        // console.log(test);
+
+        // 2.注册事件 处理程序
+        for (var i = 0; i < list.length; i++) {
+
+            list[i].setAttribute('data-index', i);
+
+            list[i].onclick = function() {
+                for (var i = 0; i < list.length; i++) {
+                    list[i].className = '';
+                }
+                this.className = 'bg';
+
+                var index = this.getAttribute('data-index');
+                // console.log(index);
+                for (var i = 0; i < test.length; i++) {
+                    test[i].className = 'lis';
+                }
+
+                test[index].className = 'lis bk';
+
+            }
+        }
+    </script>
+</body>
+
+</html>

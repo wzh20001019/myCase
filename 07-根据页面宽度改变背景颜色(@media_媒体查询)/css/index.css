@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+
+/* 页面宽度在700px之内背景颜色为红色 */
+
+@media screen and (max-width: 700px) {
+    body {
+        background-color: red;
+    }
+}
+
+
+/* @media screen and (min-width: 701px) and (max-width: 999px) {
+    body {
+        background-color: pink;
+    }
+} */
+
+
+/* 页面宽度大于701px时背景颜色为粉红色 */
+
+@media screen and (min-width: 701px) {
+    body {
+        background-color: pink;
+    }
+}
+
+
+/* 页面宽度大于1000px时背景颜色为紫色 */
+
+@media screen and (min-width: 1000px) {
+    body {
+        background-color: purple;
+    }
+}

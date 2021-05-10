@@ -1,0 +1,39 @@
+body{
+	margin: 0;
+}
+#wrap{
+	position: relative;
+	width: 200px;
+	height: 100px;
+	margin: 100px auto;
+	border-width: 1px 1px 100px 1px;
+	border-style: solid;
+	border-radius: 50%;
+	animation: rote 2s linear infinite;
+}
+#wrap:before,#wrap:after{
+	content: '';          /*激活伪类的必要元素*/
+	position: absolute;
+	top: 50%;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+#wrap:before{
+	left: 0;
+	border: 35px solid black;
+	background-color: white;
+}
+#wrap:after{
+	right: 0;
+	border: 35px solid white;
+	background-color: black;
+}
+@keyframes rote{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}

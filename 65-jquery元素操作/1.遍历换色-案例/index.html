@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+
+    <script>
+        $(function() {
+            var arr = ["red", "aqua", "blue", "orange", "pink"];
+
+            // 1.遍历方法一  多用于数组
+            $("div").each(function(index, ele) {
+                $(ele).css("color", arr[index]);
+            });
+
+            // 2.遍历方法二  多用于对象
+            $.each($("div"), function(index, ele) {
+                $(ele).css("color", arr[index]);
+            })
+        })
+    </script>
+</body>
+
+</html>

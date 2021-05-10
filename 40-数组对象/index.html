@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.筛选数组，添加数组
+        // var arr = [1200, 1600, 2000, 2200, 1800, 1900];
+        // var newArr = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] < 2000) {
+        //         newArr.push(arr[i]); //添加到新数组
+        //     }
+        // }
+        // console.log(newArr);
+
+        // 2.数组排序
+        var arr = [1, 7, 3, 14, 34, 78, 9];
+
+        // 1.翻转数组
+        // arr.reverse();
+        // console.log(arr);
+
+        // // 2.冒泡排序
+        // arr.sort(function(a, b) {
+        //     return a - b; //数组升序
+        //     // return b - a; //数组降序
+        // })
+        // console.log(arr);
+
+        // 3.数组去重
+        function un(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        var arr1 = un([1, 4, 6, 3, 1, 4, 2, 6, 8, 9, 7, 5, 3, 5, 9, 8, ]);
+        console.log(arr1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.练习1   模拟计算器
+        var x = prompt('请输入第一个数字');
+        var y = prompt('请输入第二个数字');
+        var z = prompt('请选择一种算法' + '\n' + '加法' + '\n' + '减法' + '\n' + '乘法' + '\n' + '除法');
+
+        function operation(num1, num2, type) {
+            var num1 = parseFloat(num1);
+            var num2 = parseFloat(num2);
+
+            if (type == '加法') {
+                return num1 + num2;
+            } else if (type == '减法') {
+                return num1 - num2;
+            } else if (type == '乘法') {
+                return num1 * num2;
+            } else if (type == '除法') {
+                return num1 / num2;
+            } else {
+                return '输入算法错误';
+            }
+        }
+        var re = operation(x, y, z);
+        alert(re);
+    </script>
+</body>
+
+</html>

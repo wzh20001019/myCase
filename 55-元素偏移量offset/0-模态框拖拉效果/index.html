@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .wrap {
+            position: relative;
+            top: 50px;
+            left: 200px;
+            width: 800px;
+            height: 500px;
+            background: rgba(0, 0, 0, .5);
+        }
+        
+        .wrap .move {
+            position: absolute;
+            top: 200px;
+            left: 350px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="move"></div>
+    </div>
+
+</body>
+
+<script>
+    let wrap = document.querySelector('.wrap'),
+        move = document.querySelector('.move');
+
+    move.addEventListener('mousedown', function(e) {
+        let x = e.pageX - this.offsetLeft - wrap.offsetLeft;
+        let y = e.pageY - this.offsetTop - wrap.offsetTop;
+
+        document.addEventListener('mousemove', m);
+
+        function m(e) {
+            let leftX = e.pageX - x - wrap.offsetLeft;
+            let topY = e.pageY - y - wrap.offsetTop;
+
+            let maxX = wrap.offsetWidth - move.offsetWidth,
+                maxY = wrap.offsetHeight - move.offsetHeight;
+
+            if (leftX < 0) {
+                move.style.left = 0 + 'px';
+            } else if (leftX > maxX) {
+                move.style.left = maxX + 'px';
+            } else {
+                move.style.left = leftX + 'px';
+            }
+
+            if (topY < 0) {
+                move.style.top = 0 + 'px';
+            } else if (topY > maxY) {
+                move.style.top = maxY + 'px';
+            } else {
+                move.style.top = topY + 'px';
+            }
+        }
+
+        document.addEventListener('mouseup', function() {
+            this.removeEventListener('mousemove', m);
+        });
+    });
+</script>
+
+</html>

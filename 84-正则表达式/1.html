@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.RegExp 创建正则表达式
+        var regexp = new RegExp(/123/);
+        // console.log(regexp.test(/123/));
+
+        // 2.字面量创建
+        var rg = /12345/;
+        console.log(rg);
+        console.log(rg.test(12345764));
+        console.log(rg.test(12345132));
+        console.log('----------------------------');
+
+        var reg = /^abcd/;
+        console.log(reg.test('abcdef'));
+        console.log(reg.test('aabcd'));
+        console.log('----------------------------');
+
+        var reg1 = /ad$/;
+        console.log(reg1.test('aad'));
+        console.log(reg1.test('sasd'));
+        console.log('----------------------------');
+
+        var reg2 = /^asd$/;
+        console.log(reg2.test('asd'));
+        console.log(reg2.test('asdf'));
+        console.log('----------------------------');
+
+        var reg3 = /^[a-zA-Z0-9_-]$/;
+        console.log(reg3.test('a'));
+        console.log(reg3.test('7'));
+        console.log(reg3.test('@'));
+        console.log('----------------------------');
+
+        var reg4 = /^[^a-z]$f/;
+        console.log(reg3.test('a'));
+        console.log(reg3.test('7'));
+        console.log(reg3.test('@'));
+        console.log('----------------------------');
+    </script>
+</body>
+
+</html>

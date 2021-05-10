@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>刮刮乐</title>
+		<style>
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
+
+			div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				left: 300px;
+				top: 100px;
+				border: 1px solid #000;
+				width: 200px;
+				height: 70px;
+				color: red;
+				font-size: 20px;
+				user-select: none;
+			}
+
+			canvas {
+				display: block;
+				position: absolute;
+				left: 301px;
+				top: 101px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>特等奖</div>
+		<canvas width="200" height="70"></canvas>
+	</body>
+	<script>
+		let canvas = document.querySelector('canvas')
+		let ctx = canvas.getContext('2d')
+
+		ctx.fillStyle = '#333'
+		ctx.fillRect(0, 0, 200, 70)
+
+		ctx.globalCompositeOperation = 'destination-out'
+
+		canvas.onmousedown = function () {
+			canvas.onmousemove = function (e) {
+				ctx.beginPath()
+				ctx.arc(e.offsetX, e.offsetY, 10, 0, 2 * Math.PI, false)
+				ctx.fill()
+			}
+		}
+	</script>
+</html>

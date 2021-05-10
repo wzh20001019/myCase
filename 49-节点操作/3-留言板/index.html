@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button class="btn">提交</button>
+    <ul class="box">
+    </ul>
+
+    <script>
+        var btn = document.querySelector('.btn'); //获取按钮元素
+        // console.log(btn);
+
+        var text = btn.previousElementSibling; //获取文本域元素
+        // console.log(text);
+
+        var ul = btn.nextElementSibling; //获取留言盒子元素
+        // console.log(ul);
+
+        btn.onclick = function() { //给按钮添加点击事件
+
+            var li = document.createElement('li'); //创造一个新的节点 新的li标签
+
+            if (text.value == '') { //判断文本域是否有内容
+                alert('请输入内容'); //弹出警示框
+                return false; //返回值 false
+            } else {
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>"; //讲文本域内容赋值给 新的li标签
+                ul.insertBefore(li, ul.children[0]); //讲新的li标签添加到留言盒子中
+
+                var a = document.querySelectorAll('a');
+                for (var i = 0; i < a.length; i++) {
+                    a[i].onclick = function() {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+        text.onfocus = function() { //当文本域获取焦点
+            this.value = ''; //清空文本域中的内容
+        }
+    </script>
+</body>
+
+</html>

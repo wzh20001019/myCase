@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.比较三个数的最大值,并弹出最大值
+        var x = prompt('请输入第一个数');
+        var y = prompt('请输入第二个数');
+        var z = prompt('请输入第三个数');
+
+        function compare(num1, num2, num3) {
+            var num1 = parseFloat(num1);
+            var num2 = parseFloat(num2);
+            var num3 = parseFloat(num3);
+
+            // 1.方法一
+            // if (num1 > num2) {
+            //     if (num1 > num3) {
+            //         return num1;
+            //     } else {
+            //         return num3;
+            //     }
+            // } else {
+            //     if (num2 > num3) {
+            //         return num2;
+            //     } else {
+            //         return num3;
+            //     }
+            // }
+
+            // 2.方法二
+            if (num1 > num2 || num3 > num2) {
+                if (num1 > num3) {
+                    return num1;
+                } else {
+                    return num3;
+                }
+            } else {
+                return num2;
+            }
+
+        }
+        var re = compare(x, y, z);
+        alert('最大值是' + re);
+    </script>
+</body>
+
+</html>

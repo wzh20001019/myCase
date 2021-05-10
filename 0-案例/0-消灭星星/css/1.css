@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+    font-size: 30px;
+}
+
+button {
+    margin: 10px 0 0 10px;
+    color: aqua;
+    cursor: pointer;
+}
+
+span {
+    display: inline-block;
+    margin: 0 5px 0 5px;
+}
+
+.second {
+    color: #f00;
+}
+
+.wrap {
+    display: inline-block;
+    margin-left: 10px;
+    width: 100px;
+    height: 20px;
+    border: 1px solid skyblue;
+    vertical-align: bottom;
+    overflow: hidden;
+}
+
+.wrap .schedule {
+    height: 20px;
+    /* background: rgb(162, 0, 236); */
+}
+
+img {
+    width: 100%;
+    cursor: pointer;
+}
+
+h3 {
+    display: inline-block;
+    margin: 0;
+    margin-left: 70px;
+    color: red;
+}

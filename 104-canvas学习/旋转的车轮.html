@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>旋转的车轮</title>
+		<style>
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
+
+			canvas {
+				display: block;
+				background: #f6f6f6;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas></canvas>
+	</body>
+	<script>
+		let canvas = document.querySelector('canvas')
+		let ctx = canvas.getContext('2d')
+
+		canvas.width = document.body.offsetWidth
+		canvas.height = document.body.offsetHeight
+
+		let image = new Image()
+		image.src = './images/06.jpg'
+
+		image.onload = function () {
+			let deg = 0
+			let x = 200
+			setInterval(() => {
+				deg += 5
+				x++
+
+				ctx.save()
+				ctx.translate(x, 300)
+				ctx.scale(0.5, 0.5)
+				ctx.rotate((deg * Math.PI) / 180)
+				ctx.drawImage(this, -610 / 2, -610 / 2)
+
+				ctx.restore()
+			}, 10)
+		}
+	</script>
+</html>

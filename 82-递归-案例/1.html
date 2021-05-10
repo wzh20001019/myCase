@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.
+        function sun(n) {
+            console.log(n)
+            if (n == 1) {
+                return 1;
+            }
+            return sun(n - 1);
+        }
+        console.log(sun(4));
+
+        // 2.
+        function s(n) {
+            if (n == 1) {
+                return 1;
+            }
+            return n * s(n - 1);
+        }
+        console.log(s(5));
+
+        // 3.
+        function dg(n) {
+            if (n == 1 || n == 2) {
+                return 1;
+            }
+            return dg(n - 1) + dg(n - 2);
+        }
+        console.log(dg(6));
+    </script>
+</body>
+
+</html>

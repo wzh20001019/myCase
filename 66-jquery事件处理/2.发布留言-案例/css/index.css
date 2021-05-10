@@ -1,0 +1,72 @@
+body {
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+.wrap {
+	margin: 100px auto;
+	width: 550px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+
+.wrap .ly {
+	position: relative;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 400px;
+	height: 200px;
+}
+
+.wrap .ly .text {
+	box-sizing: border-box;
+	margin: 0;
+	resize: none;
+	width: 100%;
+	height: 100%;
+	border: 1px solid aqua;
+}
+
+.wrap .ly button {
+	position: absolute;
+	right: -75px;
+	bottom: 0;
+	width: 60px;
+	height: 30px;
+}
+
+.wrap .ul {
+	box-sizing: border-box;
+	margin-top: 20px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	padding: 10px 20px;
+	width: 400px;
+	border: 1px solid #ccc;
+}
+
+.wrap .ul li {
+	display: none;
+	margin-bottom: 5px;
+	width: 100%;
+	height: 30px;
+	color: aqua;
+}
+
+.wrap .ul li a {
+	float: right;
+	margin-right: 10px;
+	color: red;
+}
+
+.wrap .ul li:last-child {
+	margin-bottom: 0;
+}

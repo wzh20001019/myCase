@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ul li {
+            margin-top: 5px;
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="ul">
+        <li>li标签1</li>
+        <li>li标签2</li>
+        <li>li标签3</li>
+        <li>li标签4</li>
+        <li>li标签5</li>
+    </ul>
+
+    <script>
+        // 'use strict';
+        var lis = document.querySelectorAll('.ul li');
+
+        // 1.普通方式绑定事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].index = i;
+            lis[i].addEventListener('click', function() {
+                console.log(this.index);
+            });
+        }
+
+        // 2.采用闭包的方法
+        for (var i = 0; i < lis.length; i++) {
+            (function(i) {
+                lis[i].addEventListener('click', function() {
+                    console.log(i);
+                });
+            })(i);
+        }
+    </script>
+</body>
+
+</html>

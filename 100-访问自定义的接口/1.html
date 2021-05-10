@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试接口</title>
+    <script src="./jquery.min.js"></script>
+</head>
+
+<body>
+    <button class="get">GET</button>
+    <button class="post">POST</button>
+    <button class="jsonp">获取</button>
+
+    <script>
+        $(function() {
+            $('.get').on('click', function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://127.0.0.1/code/get',
+                    data: {
+                        id: 1
+                    },
+                    success: function(res) {
+                        console.log(res);
+                    }
+                });
+            });
+
+            $('.post').on('click', function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1/code/post',
+                    data: {
+                        name: 'wzh',
+                        age: 20
+                    },
+                    success: function(res) {
+                        console.log(res);
+                    }
+                });
+            });
+
+            $('.jsonp').on('click', function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://127.0.0.1/code/jsonp',
+                    dataType: 'jsonp',
+                    jsonpCallback: 'fn',
+                    success: function(res) {
+                        console.log(res);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

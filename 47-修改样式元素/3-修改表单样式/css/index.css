@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+div {
+    margin: 50px auto;
+    width: 400px;
+}
+
+div .p {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 13px;
+    color: #666;
+}

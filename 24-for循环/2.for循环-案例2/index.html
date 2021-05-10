@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.1-100的和
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+
+        // 2.(1-100)的平均数
+        var average = sum / 100;
+        console.log(average);
+
+        // 3.(1-100)之间所有偶数和奇数的和
+        var even = 0;
+        var odd = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                even += i;
+            } else {
+                odd += i;
+            }
+        }
+        console.log('1-100之间的所有偶数和为' + even);
+        console.log('1-100之间的所有奇数和为' + odd);
+
+        // 4.1-100之间所有能被3整除的数字的和
+        var num = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                num += i;
+            }
+        }
+        console.log('1-100之间所有能被3整除的数字的和为' + num);
+
+        // 5.计算班级平均成绩
+        var number = prompt('请输入你们班级的人数');
+        var fraction = 0;
+        for (var i = 1; i <= number; i++) {
+            fraction1 = prompt('请输入第' + i + '个学生的成绩');
+            fraction += parseFloat(fraction1);
+        }
+        var average1 = fraction / number;
+        alert('班级分数总和为' + fraction);
+        alert('班级平均数为' + average1);
+    </script>
+</body>
+
+</html>

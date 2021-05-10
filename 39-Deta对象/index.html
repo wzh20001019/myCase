@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.Date日期对象
+        var date = new Date();
+        console.log(date);
+
+        console.log(date.getFullYear()); //打印当前时间 年份
+        console.log(date.getMonth() + 1); //打印当前时间 月份
+        console.log(date.getDate()); //打印当前时间 日期
+        console.log(date.getDay()); //打印当前时间 星期几
+        console.log(date.getHours()); //打印当前时间 小时
+        console.log(date.getMinutes()); //打印当前时间 分钟
+        console.log(date.getSeconds()); //打印当前时间 秒
+
+
+        // 2.查看当前时间
+        function gettime() {
+            var time = new Date();
+            var hour = time.getHours();
+            hour = hour < 10 ? '0' + hour : hour;
+            // if (hour < 10) {
+            //     hour = '0' + hour;
+            // }
+
+            var min = time.getMinutes();
+            min = min < 10 ? '0' + min : min;
+            // if (min < 10) {
+            //     min = '0' + min;
+            // }
+
+            var se = time.getSeconds();
+            se = se < 10 ? '0' + se : se;
+            // if (se < 10) {
+            //     se = '0' + se;
+            // }
+            return hour + ':' + min + ':' + se;
+        }
+        console.log(gettime());
+
+        // 3.倒计时案例
+        function countDomn(time) {
+            var nowtime = +new Date();
+            var inputtime = +new Date(time);
+            var times = (inputtime - nowtime) / 1000;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        var inp = +new Date('2020-8-25 12:00:00'); //用户输入的时间
+        console.log(countDomn(inp));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.all.js"></script>
+    <script src="./jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 50px 0 0 100px;
+        }
+        
+        span {
+            display: block;
+            margin: 30px 10px;
+            color: #fff;
+            font-size: 20px;
+            text-shadow: .1rem .1rem .1rem #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>首页</h1>
+    <span></span>
+    <button type="button" class="layui-btn layui-btn-danger">退出登录</button>
+</body>
+<script>
+    $(function() {
+        getUserInfo();
+
+        function getUserInfo() {
+            $.ajax({
+                method: 'GET',
+                url: '/api/username',
+                success: res => {
+                    if (res.status !== 0) {
+                        location.href = './login.html'
+                    }
+                    $('span').html('欢迎' + res.username)
+                }
+            })
+        }
+
+        $('button').on('click', function() {
+            layer.confirm('退出登录', {
+                icon: 5,
+                title: '退出登录'
+            }, function(index) {
+                $.ajax({
+                    method: 'POST',
+                    url: '/api/off',
+                    success: res => {
+                        if (res.status === 0) {
+                            location.href = './login.html'
+                        }
+                    }
+                })
+                layer.close(index);
+            });
+        })
+    })
+</script>
+
+
+
+</html>

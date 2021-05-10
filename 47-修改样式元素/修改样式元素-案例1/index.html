@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div>
+        <img src="images/2.png" alt="" class="i1">
+        <img src="images/1.png" alt="" class="i2">
+    </div>
+
+    <script>
+        // 1.获取元素
+        var div = document.querySelector('div');
+        var img = document.querySelector('.i2');
+        // console.log(img);
+
+        // 2.注册事件 执行代码
+        img.onclick = function() {
+            div.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

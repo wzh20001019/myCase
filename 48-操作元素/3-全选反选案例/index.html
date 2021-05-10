@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <table id="ta">
+        <tbody>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                    <a href="javascript:;">全选与反选</a>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="it">
+                    <a href="javascript:;">全选与反选</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="it">
+                    <a href="javascript:;">全选与反选</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="it">
+                    <a href="javascript:;">全选与反选</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="it">
+                    <a href="javascript:;">全选与反选</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="it">
+                    <a href="javascript:;">全选与反选</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var tr = document.querySelectorAll('tr');
+
+        for (var i = 0; i < tr.length; i++) {
+            tr[i].onmouseover = function() {
+                this.className = 'bg';
+            }
+            tr[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+
+        var che = document.querySelector('th').querySelector('input');
+        var ches = document.querySelectorAll('.it');
+
+        che.onclick = function() { //点击事件 che的checked值与其他的ches的checked值相等
+            console.log(this.checked);
+
+            for (var i = 0; i < ches.length; i++) {
+                ches[i].checked = this.checked;
+            }
+        }
+
+        for (var i = 0; i < ches.length; i++) {
+            ches[i].onclick = function() {
+                console.log(this.checked); //选中状态返回true 未选中返回false
+
+                var flag = true;
+                for (var i = 0; i < ches.length; i++) {
+                    if (!ches[i].checked) {
+                        flag = false;
+                    }
+                }
+                che.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.do while 打印人的一生(1-100岁)
+        var j = 1;
+        do {
+            console.log('我今年' + j + '岁');
+            j++;
+        } while (j <= 100)
+
+
+
+
+        // 2.do while 计算1-100的和
+        var older = 0;
+        var i = 1;
+        do {
+            older += i;
+            i++;
+        } while (i <= 100)
+        console.log(older);
+
+
+        // 3.
+        do {
+            var n = prompt('你爱我吗?');
+        } while (n !== '我爱你')
+        alert('我也爱你');
+    </script>
+</body>
+
+</html>

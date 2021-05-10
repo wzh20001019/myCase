@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <button class="yan">天使彦</button>
+    <button class="xi">鹤熙</button>
+    <button class="sha">凯莎</button>
+    <a href="javascript:;">
+        <img src="images/1.jpg" title="天使彦">
+    </a>
+
+    <script>
+        // 1.获取元素
+        var y = document.querySelector('.yan');
+        var x = document.querySelector('.xi');
+        var s = document.querySelector('.sha');
+        var img = document.querySelector('img');
+        // console.log(y, x, s);
+
+        // 2.点击事件
+        y.onclick = function() {
+            img.src = 'images/1.jpg';
+            img.title = '天使彦';
+        }
+
+        x.onclick = function() {
+            img.src = "images/2.jpg";
+            img.title = '鹤熙';
+        }
+
+        s.onclick = function() {
+            img.src = 'images/3.jpg';
+            img.title = '凯莎';
+        }
+    </script>
+</body>
+
+</html>

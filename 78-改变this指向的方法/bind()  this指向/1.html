@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .wrap {
+            margin: 40px auto;
+            width: 52px;
+            height: 25px;
+        }
+        /* .wrap button {
+            
+        } */
+        
+        span {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <button>点击1</button>
+        <!-- <button>点击2</button> -->
+        <!-- <button>点击3</button> -->
+    </div>
+    <span>10s</span>
+
+    <script>
+        var btn = document.querySelector('.wrap button');
+        var span = document.querySelector('span');
+        var index = 10;
+
+        // time();
+
+        function time() {
+            var that = this;
+            clearInterval(timer);
+            var timer = setInterval(function() {
+                index--;
+                span.innerHTML = index + 's';
+                if (index <= 0) {
+                    index = 10;
+                    span.innerHTML = index + 's';
+                    that.disabled = false;
+                    clearInterval(timer);
+                }
+            }, 1000);
+        }
+
+        var f = time.bind(btn);
+
+        btn.addEventListener('click', function() {
+            this.disabled = true;
+            f();
+        });
+    </script>
+</body>
+
+</html>
